@@ -4,7 +4,11 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
+import actions.IrEste;
+import actions.IrNorte;
+import actions.IrOeste;
+import actions.IrSur;
+import actions.Multar;
 import frsf.cidisi.faia.agent.Action;
 import frsf.cidisi.faia.agent.Perception;
 import frsf.cidisi.faia.agent.search.Problem;
