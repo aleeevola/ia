@@ -10,19 +10,20 @@ import frsf.cidisi.faia.agent.search.SearchBasedAgentState;
 public class EstadoAgenteCustodia extends SearchBasedAgentState{
 	
     private HashMap esquinas;
-    private List<VectorCalle> ubicacionActual;
-    private List<VectorCalle> listaMultados;
+    private VectorCalles ubicacionActual;
+    private List<VectorCalles> listaInfectados;
     private Integer cantidadMultados;
 
     public EstadoAgenteCustodia() {
     	
-    	esquinas = new HashMap();  //ESTO ES PROVISORIO CREO QUE LA INICIALIZACION NO ES ASÍ
-    	ubicacionActual = new ArrayList<VectorCalle>();
-    	listaMultados = new ArrayList<VectorCalle>();
+    	esquinas = cargarMapa();  //PUSE UN MÉTODO ABAJO DE TODO PARA INICIALIZAR EL HASHMAP - LINEA 70
+    	ubicacionActual = new VectorCalles();
+    	listaInfectados = new ArrayList<VectorCalles>();
 		cantidadMultados = 0;
     	
         this.initState();
     }
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -53,13 +54,27 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public VectorCalles getUbicacionActual() {
+		return ubicacionActual;
+	}
 
-	public List<VectorCalle> getListaInfectados() {
-		return listaMultados;
+	public List<VectorCalles> getListaInfectados() {
+		return listaInfectados;
 	}
 
 	public Integer getCantidadMultados() {
 		return cantidadMultados;
+	}
+	
+	private HashMap cargarMapa() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public void sumarMultado() {
+		cantidadMultados++;
 	}
 
 }
