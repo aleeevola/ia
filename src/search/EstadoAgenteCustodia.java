@@ -232,6 +232,14 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 		esquinas.put("General Paz, Regimiento 12 de Infantería", Arrays.asList("0","0","0","General Paz, Javier de la Rosa"));
 		
 	}
+	
+	public HashMap<String, List<String>> getEsquinas() {
+		return esquinas;
+	}
+	
+	public void setUbicacionActual(String ubicacionActual) {
+		this.ubicacionActual=ubicacionActual;
+	}
 
 
 	public void sumarMultado() {
