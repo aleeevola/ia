@@ -11,15 +11,15 @@ import frsf.cidisi.faia.agent.search.SearchBasedAgentState;
 public class EstadoAgenteCustodia extends SearchBasedAgentState{
 	
     private HashMap<String, List<String>> esquinas=new HashMap<String, List<String>>();;
-    private VectorCalles ubicacionActual;
-    private List<VectorCalles> listaInfectados;
+    private String ubicacionActual;
+    private List<String> listaInfectados;
     private Integer cantidadMultados;
 
     public EstadoAgenteCustodia() {
  
     	cargarMapa();  
-    	ubicacionActual = new VectorCalles();
-    	listaInfectados = new ArrayList<VectorCalles>();
+    	ubicacionActual = new String();
+    	listaInfectados = new ArrayList<String>();
 		cantidadMultados = 0;
     	
         this.initState();
@@ -56,11 +56,11 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 		
 	}
 	
-	public VectorCalles getUbicacionActual() {
+	public String getUbicacionActual() {
 		return ubicacionActual;
 	}
 
-	public List<VectorCalles> getListaInfectados() {
+	public List<String> getListaInfectados() {
 		return listaInfectados;
 	}
 
@@ -69,7 +69,7 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 	}
 	
 	private void cargarMapa() {
-		
+																	//este,oeste,norte,sur
 		esquinas.put("Almirante Brown, Pedro de Vega", Arrays.asList("0","Almirante Brown, Ricardo Aldao","Echagüe, Pedro de Vega","0"));
 		esquinas.put("Almirante Brown,  Ricardo Aldao", Arrays.asList("0","0","Almirante Brown, Angel Cassanello","Almirante Brown, Pedro de Vega"));
 		esquinas.put("Almirante Brown, Angel Cassanello", Arrays.asList("0","Talcahuano, Angel Cassanello","Almirante Brown, J.P.López","Almirante Brown,  Ricardo Aldao"));

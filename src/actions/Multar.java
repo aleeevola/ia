@@ -7,7 +7,7 @@ import frsf.cidisi.faia.state.AgentState;
 import frsf.cidisi.faia.state.EnvironmentState;
 import search.EstadoAgenteCustodia;
 import search.EstadoAmbiente;
-import search.VectorCalles;
+
 
 public class Multar extends SearchAction{
 
@@ -43,8 +43,8 @@ public class Multar extends SearchAction{
 	        if(agState.getListaInfectados().contains(agState.getUbicacionActual())){
 	        	
 	        	//Removemos la ubicacion del ciudadano que ya ha sido multado
-	        	VectorCalles vec = null;
-	        	for(VectorCalles v : environmentState.getListaInfectados())
+	        	String vec = null;
+	        	for(String v : environmentState.getListaInfectados())
 	        		if(v.toString().equals(agState.getUbicacionActual().toString())) {
 	        			vec = v;
 	        	environmentState.sumarMultado();

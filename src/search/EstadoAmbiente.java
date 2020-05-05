@@ -10,14 +10,14 @@ import frsf.cidisi.faia.state.EnvironmentState;
  */
 public class EstadoAmbiente extends EnvironmentState {
 	
-    private List<VectorCalles> listaInfectados;
-    private VectorCalles posicionAgenteCustodia;
+    private List<String> listaInfectados;
+    private String posicionAgenteCustodia;
     private Integer cantidadMultados;
 	
     public EstadoAmbiente() {
         
-    	listaInfectados = new ArrayList<VectorCalles>();
-    	posicionAgenteCustodia = new VectorCalles();
+    	listaInfectados = new ArrayList<String>();
+    	posicionAgenteCustodia = new String();
     	
         this.initState();
     }
@@ -29,7 +29,7 @@ public class EstadoAmbiente extends EnvironmentState {
     public void initState() {
 
     	//El estado inicial del estado del Ambiente; el escenario de entrada
-    	VectorCalles v1 = new VectorCalles("Almirante Brown", "Pedro De Vega");
+    	String v1 = new String("Almirante Brown, Pedro De Vega");
     	
     	posicionAgenteCustodia = v1; 	
     }
@@ -43,7 +43,7 @@ public class EstadoAmbiente extends EnvironmentState {
         String str = "";
         
         str += "Lista de posiciones ciudadanos-infectados que violan la cuarentena: {";
-        for(VectorCalles v : listaInfectados)
+        for(String v : listaInfectados)
         	str+= v.toString() + ", ";
         str = str.substring(0,str.length()-2);
         str += "}\n";
@@ -54,18 +54,18 @@ public class EstadoAmbiente extends EnvironmentState {
         return str;
     }
 
-     public List<VectorCalles> getListaInfectados(){
+     public List<String> getListaInfectados(){
         return listaInfectados;
      }
      
-     public void setListaInfectados(List<VectorCalles> arg){
+     public void setListaInfectados(List<String> arg){
         listaInfectados = arg;
      }
     
-     public VectorCalles getposicionAgenteCustodia(){
+     public String getposicionAgenteCustodia(){
         return posicionAgenteCustodia;
      }
-     public void setposicionAgenteCustodia(VectorCalles arg){
+     public void setposicionAgenteCustodia(String arg){
         posicionAgenteCustodia = arg;
      }
 
