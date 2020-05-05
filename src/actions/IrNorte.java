@@ -15,8 +15,7 @@ public class IrNorte extends SearchAction{
 
 	@Override
 	public Double getCost() {
-		// TODO Auto-generated method stub
-		return null;
+		return new Double(1);
 	}
 
 	@Override
