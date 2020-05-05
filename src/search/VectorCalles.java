@@ -34,4 +34,18 @@ public class VectorCalles {
 		return resultado;
 	}
 
+	public boolean equals(Object arg0) {
+		if(((VectorCalles)arg0).getCalleA()==calleA && ((VectorCalles)arg0).getCalleB()==calleB) {
+			return true;
+		}
+		return false;
+	}
+
+	public int hashCode() {
+		String hash = calleA+calleB;
+		return hash.hashCode();
+	}
+	
+	
+
 }
