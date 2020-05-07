@@ -6,6 +6,7 @@ import frsf.cidisi.faia.state.AgentState;
 import frsf.cidisi.faia.state.EnvironmentState;
 import search.EstadoAgenteCustodia;
 import search.EstadoAmbiente;
+import search.PerceptionAgenteCustodia;
 import search.VectorCalles;
 
 public class IrEste extends SearchAction{
@@ -16,7 +17,7 @@ public class IrEste extends SearchAction{
 		EstadoAgenteCustodia agState = (EstadoAgenteCustodia) s;
         VectorCalles esquinaSiguiente = agState.getEsquinas().get(agState.getUbicacionActual()).get(0); //Get(0) porque el orden de las esquinas siguientes es "Este,Oeste,Norte,Sur"
         //Las direcciones en las que no pueden moverse el agente desde la esquina en la que está tienen asignado un "0" 
-        if(esquinaSiguiente!=null){
+        if(esquinaSiguiente!=null && agState.getEstadoCalle(esquinaSiguiente) != PerceptionAgenteCustodia.CALLE_CORTADA){ //Agregué la ultima parte, pero no se si realmente es así.
         	agState.setUbicacionActual(esquinaSiguiente);
         	return agState;
         }

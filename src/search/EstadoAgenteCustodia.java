@@ -328,4 +328,13 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 		this.listaCallesCortadas = listaCallesCortadas;
 	}
 
+
+	public int getEstadoCalle(VectorCalles esquinaSiguiente) {
+		// TODO este método pero no se. @Jraviolo 
+		if(listaCallesCortadas.contains(esquinaSiguiente))
+			return 1;
+		else
+			return -1;
+	}
+
 }
