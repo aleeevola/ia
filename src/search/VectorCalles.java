@@ -45,6 +45,14 @@ public class VectorCalles {
 		String hash = calleA+calleB;
 		return hash.hashCode();
 	}
+
+	@Override
+	protected VectorCalles clone() {
+		VectorCalles newVectorCalles = new VectorCalles();
+		newVectorCalles.setCalleA(this.getCalleA());
+		newVectorCalles.setCalleB(this.getCalleB());
+		return newVectorCalles;
+	}
 	
 	
 

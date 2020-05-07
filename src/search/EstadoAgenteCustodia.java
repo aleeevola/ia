@@ -13,6 +13,7 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 	private HashMap<VectorCalles, List<VectorCalles>> esquinas=new HashMap<VectorCalles, List<VectorCalles>>();
     private VectorCalles ubicacionActual;
     private List<VectorCalles> listaInfectados;
+    private List<VectorCalles> listaCallesCortadas;
     private Integer cantidadMultados;
 
     public EstadoAgenteCustodia() {
@@ -20,6 +21,7 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
     	cargarMapa();  
     	ubicacionActual = new VectorCalles();
     	listaInfectados = new ArrayList<VectorCalles>();
+    	listaCallesCortadas = new ArrayList<VectorCalles>();
 		cantidadMultados = 0;
     	
         this.initState();
@@ -34,8 +36,30 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 
 	@Override
 	public SearchBasedAgentState clone() {
-		// TODO Auto-generated method stub
-		return null;
+		// TODO hecho por ale revisar
+		EstadoAgenteCustodia newEstadoAgente= new EstadoAgenteCustodia();
+		
+		//Estos son los que no cambian
+		newEstadoAgente.setEsquinas(this.getEsquinas());
+		newEstadoAgente.setListaCallesCortadas(this.getListaCallesCortadas());
+		
+		
+		//estos son los que hay que clonar si o si
+		ArrayList<VectorCalles> newListaInfectados= new ArrayList<VectorCalles>();
+		for(VectorCalles infectado : this.getListaInfectados()) {
+			newListaInfectados.add(infectado.clone());
+		}
+		newEstadoAgente.setListaInfectados(newListaInfectados);
+		
+		Integer newCantidadMultados = this.getCantidadMultados();
+		newEstadoAgente.setCantidadMultados(newCantidadMultados);
+		
+		
+		//este no se si es necesario clonar
+		VectorCalles newUbicacionActual = this.getUbicacionActual().clone();
+		newEstadoAgente.setUbicacionActual(newUbicacionActual);
+		
+		return newEstadoAgente;
 	}
 
 	@Override
@@ -237,12 +261,37 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 		cantidadMultados++;
 	}
 	
+	public void setEsquinas(HashMap<VectorCalles, List<VectorCalles>> esquinas) {
+		this.esquinas = esquinas;
+	}
+
+
+	public void setListaInfectados(List<VectorCalles> listaInfectados) {
+		this.listaInfectados = listaInfectados;
+	}
+
+
+	public void setCantidadMultados(Integer cantidadMultados) {
+		this.cantidadMultados = cantidadMultados;
+	}
+
+
 	public HashMap<VectorCalles, List<VectorCalles>> getEsquinas() {
 		return esquinas;
 	}
 
 	public void setUbicacionActual(VectorCalles ubicacionActual) {
 		this.ubicacionActual=ubicacionActual;
+	}
+
+
+	public List<VectorCalles> getListaCallesCortadas() {
+		return listaCallesCortadas;
+	}
+
+
+	public void setListaCallesCortadas(List<VectorCalles> listaCallesCortadas) {
+		this.listaCallesCortadas = listaCallesCortadas;
 	}
 
 }
