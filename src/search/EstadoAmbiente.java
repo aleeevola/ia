@@ -11,12 +11,14 @@ import frsf.cidisi.faia.state.EnvironmentState;
 public class EstadoAmbiente extends EnvironmentState {
 	
     private List<VectorCalles> listaInfectados;
+    private List<VectorCalles> listaCallesCortadas;
     private VectorCalles posicionAgenteCustodia;
     private Integer cantidadMultados;
 	
     public EstadoAmbiente() {
         
     	listaInfectados = new ArrayList<VectorCalles>();
+    	listaCallesCortadas = new ArrayList<VectorCalles>();
     	posicionAgenteCustodia = new VectorCalles();
     	
         this.initState();
@@ -73,6 +75,15 @@ public class EstadoAmbiente extends EnvironmentState {
 		cantidadMultados++;
 		
 	}
+
+	public List<VectorCalles> getListaCallesCortadas() {
+		return listaCallesCortadas;
+	}
+
+	public void setListaCallesCortadas(List<VectorCalles> listaCallesCortadas) {
+		this.listaCallesCortadas = listaCallesCortadas;
+	}
+	
 	
 
 }

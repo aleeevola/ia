@@ -65,7 +65,41 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 	@Override
 	public void updateState(Perception p) {
 		// TODO Auto-generated method stub
+		PerceptionAgenteCustodia percepcion=(PerceptionAgenteCustodia) p;
 		
+		ArrayList<VectorCalles> newInfectados=percepcion.getInfectados();
+		ArrayList<VectorCalles> newCallesCortadas=percepcion.getCallesCortadas();
+		
+		/*Si hay nuevos infectados los agrega a la lista, si es que 
+		 * ya no estan
+		 * */
+		if(!newInfectados.isEmpty()) {
+			for(VectorCalles infectado : newInfectados) {
+				if(!this.getListaInfectados().contains(infectado)) {
+					/*
+					 * Añado nuevo infectado
+					 * segun entiendo el contains usa el metodo equals
+					 * (puede fallar eso xd) pero creo que lo hice bien*/
+					this.getListaInfectados().add(infectado);
+				}
+			}
+		}
+		
+		
+		/*Si hay nuevas calles cortadas las agrega a la lista, si es que 
+		 * ya no estan
+		 * */
+		if(!newCallesCortadas.isEmpty()) {
+			for(VectorCalles newCalle : newCallesCortadas) {
+				if(!this.getListaCallesCortadas().contains(newCalle)) {
+					/*
+					 * Añado la nueva calle cortada
+					 * segun entiendo el contains usa el metodo equals
+					 * (puede fallar eso xd) pero creo que lo hice bien*/
+					this.getListaCallesCortadas().add(newCalle);
+				}
+			}
+		}
 	}
 
 	@Override
