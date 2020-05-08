@@ -7,8 +7,6 @@ import frsf.cidisi.faia.agent.Perception;
 import frsf.cidisi.faia.environment.Environment;
 
 public class PerceptionAgenteCustodia extends Perception{
-	public static int NUEVO_INFECTADO = 0;
-	public static int CALLE_CORTADA = 1;
     public static int UNKNOWN_PERCEPTION = -1;   
 
 	private ArrayList<VectorCalles> callesCortadas;
