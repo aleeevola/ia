@@ -102,11 +102,14 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 		}
 	}
 
+	
+
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return "EstadoAgenteCustodia:\n	UbicacionActual=" + ubicacionActual + "\n	ListaInfectados=" + listaInfectados
+				+ "\n	ListaCallesCortadas=" + listaCallesCortadas + "\n	CantidadMultados=" + cantidadMultados;
 	}
+
 
 	@Override
 	public void initState() {

@@ -65,6 +65,11 @@ public class PerceptionAgenteCustodia extends Perception{
 		this.infectados = infectados;
 	}
 
+	@Override
+	public String toString() {
+		return "PerceptionAgenteCustodia:\n	[callesCortadas=" + callesCortadas + "] \n 	[infectados=" + infectados + "]";
+	}
+
 	
 
 	
