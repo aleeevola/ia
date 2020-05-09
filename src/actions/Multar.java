@@ -52,14 +52,11 @@ public class Multar extends SearchAction{
 	      //Si la posicion actual se encuentra en la lista de ubicaciones de ciudadanos infectados que incumplen la cuarentena, se multa
 	        if(agState.getListaInfectados().contains(agState.getUbicacionActual())){
 	        	
-	        	//Removemos la ubicacion del ciudadano que ya ha sido multado
-	        	VectorCalles vec = null;
-	        	for(VectorCalles v : environmentState.getListaInfectados())
-	        		if(v.equals(agState.getUbicacionActual())) {
-	        			vec = v;
-	        	environmentState.sumarMultado();
-	        	environmentState.getListaInfectados().remove(vec);}
+	        	agState.getListaInfectados().remove(agState.getUbicacionActual());
+	        	agState.sumarMultado();
 	        	
+	        	environmentState.sumarMultado();
+	        	environmentState.getListaInfectados().remove(agState.getUbicacionActual());
 	        	
 	        	return environmentState;
 	        }

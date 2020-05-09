@@ -39,7 +39,8 @@ public class IrEste extends SearchAction{
         //Las direcciones en las que no pueden moverse el agente desde la esquina en la que está tienen asignado un "0" 
         if(esquinaSiguiente!=null && !agState.getListaCallesCortadas().contains(esquinaSiguiente)){
         	environmentState.setposicionAgenteCustodia(esquinaSiguiente);
-
+        	agState.setUbicacionActual(esquinaSiguiente);
+        	
         	return environmentState;
         }
         return null;
