@@ -24,7 +24,13 @@ public class Ambiente extends Environment {
 	
 	@Override
 	public Perception getPercept() {
-		// TODO Auto-generated method stub
+		// TODO REVISAR 
+		
+		PerceptionAgenteCustodia perception = new PerceptionAgenteCustodia();
+		
+		/*
+		 * No se como implementarlo xq segun entiendo para mi son aleatorias las percepciones*/
+		
 		return null;
 	}
 	
@@ -32,7 +38,7 @@ public class Ambiente extends Environment {
 	        return environmentState.toString();
 	    }
 	 
-	/*
+	
 	//Este método indica bajo qué condición se considera que el agente ha fallado
     public boolean agentFailed(Action actionReturned) {
     	boolean failed = false;
@@ -44,6 +50,6 @@ public class Ambiente extends Environment {
 
         return failed;
     }
-	*/
+	
 	
 }
