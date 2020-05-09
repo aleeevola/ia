@@ -30,8 +30,19 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 
 	@Override
 	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		return false;
+		//Define si dos estados son iguales
+		//solo lo son cuando estan en la misma ubicacion, la lista de infectados es la misma 
+		//y la cantidad de multados 
+		EstadoAgenteCustodia estadoComparado= (EstadoAgenteCustodia) obj;
+		
+		Boolean ubicacion= this.ubicacionActual.equals(estadoComparado.getUbicacionActual());
+		Boolean infectados=this.listaInfectados.equals(estadoComparado.getListaInfectados());
+		Boolean cantMultados= this.cantidadMultados.equals(estadoComparado.getCantidadMultados());
+		
+		if (ubicacion && infectados && cantMultados){
+			return true;
+		}
+		else return false;
 	}
 
 	@Override

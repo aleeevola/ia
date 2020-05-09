@@ -11,11 +11,17 @@ import search.VectorCalles;
 
 public class Multar extends SearchAction{
 
+	/**
+     * This method updates a tree node state when the search process is running.
+     * It does not updates the real world state.
+     */
 	@Override
 	public SearchBasedAgentState execute(SearchBasedAgentState s) {
+		//se utiliza cuando se esta generando el arbol de busqueda 
 		EstadoAgenteCustodia agState = (EstadoAgenteCustodia) s;
         
-        //Si la posicion actual se encuentra en la lista de ubicaciones de ciudadanos infectados que incumplen la cuarentena, se multa
+        //Si la posicion actual se encuentra en la lista de ubicaciones 
+		//de ciudadanos infectados que incumplen la cuarentena, se multa
         if(agState.getListaInfectados().contains(agState.getUbicacionActual())){
         	//Multamos al ciudadano y lo enviamos a su lugar de cuarentena
         	agState.sumarMultado();
@@ -34,8 +40,12 @@ public class Multar extends SearchAction{
 		return null;
 	}
 
+	  /**
+     * This method updates the agent state and the real world state.
+     */
 	@Override
 	public EnvironmentState execute(AgentState ast, EnvironmentState est) {
+		//en este recibe el ambiente 
 		 	EstadoAmbiente environmentState = (EstadoAmbiente) est;
 	        EstadoAgenteCustodia agState = ((EstadoAgenteCustodia) ast);
 
@@ -45,7 +55,7 @@ public class Multar extends SearchAction{
 	        	//Removemos la ubicacion del ciudadano que ya ha sido multado
 	        	VectorCalles vec = null;
 	        	for(VectorCalles v : environmentState.getListaInfectados())
-	        		if(v.toString().equals(agState.getUbicacionActual().toString())) {
+	        		if(v.equals(agState.getUbicacionActual())) {
 	        			vec = v;
 	        	environmentState.sumarMultado();
 	        	environmentState.getListaInfectados().remove(vec);}
