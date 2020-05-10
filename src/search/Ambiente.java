@@ -1,5 +1,8 @@
 package search;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import frsf.cidisi.faia.agent.Action;
 import frsf.cidisi.faia.agent.Perception;
 import frsf.cidisi.faia.environment.Environment;
@@ -28,10 +31,16 @@ public class Ambiente extends Environment {
 		
 		PerceptionAgenteCustodia perception = new PerceptionAgenteCustodia();
 		
+		 List<VectorCalles> listaInfectados=new ArrayList<VectorCalles>();
+    	listaInfectados.add(new VectorCalles("Echagüe","Obispo Boneo"));
+    	listaInfectados.add(new VectorCalles("Tacuarí","Angel Cassanello"));
+    	listaInfectados.add(new VectorCalles("Tacuarí","Espora"));
+    	listaInfectados.add(new VectorCalles("Almirante Brown","Juan Castelli"));
+    	perception.setInfectados((ArrayList<VectorCalles>) listaInfectados);
 		/*
 		 * No se como implementarlo xq segun entiendo para mi son aleatorias las percepciones*/
 		
-		return null;
+		return perception;
 	}
 	
 	 public String toString() {

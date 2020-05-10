@@ -125,7 +125,9 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 	@Override
 	public void initState() {
 		// TODO Auto-generated method stub
-		
+		VectorCalles v1 = new VectorCalles("Almirante Brown", "Pedro De Vega");
+		ubicacionActual = v1; 
+		cantidadMultados = 0;
 	}
 	
 	public VectorCalles getUbicacionActual() {
