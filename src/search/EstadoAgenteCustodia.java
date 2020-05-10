@@ -125,7 +125,8 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 	@Override
 	public void initState() {
 		// TODO Auto-generated method stub
-		VectorCalles v1 = new VectorCalles("Almirante Brown", "Pedro De Vega");
+		VectorCalles v1 = new VectorCalles("Almirante Brown","Pedro de Vega");
+		
 		ubicacionActual = v1; 
 		cantidadMultados = 0;
 	}
@@ -178,7 +179,7 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 		esquinas.put(new VectorCalles("Dorrego","Angel Cassanello"), Arrays.asList(new VectorCalles("Vélez Sarsfield","Angel Cassanello"), new VectorCalles("General Paz","Angel Cassanello"), null, new VectorCalles("Dorrego","Ricardo Aldao")));
 		esquinas.put(new VectorCalles("General Paz","Pedro de Vega"), Arrays.asList(null, null, new VectorCalles("General Paz","Ricardo Aldao"), null));
 		esquinas.put(new VectorCalles("General Paz","Ricardo Aldao"), Arrays.asList(new VectorCalles("Dorrego","Ricardo Aldao"), null, new VectorCalles("General Paz","Angel Cassanello"), new VectorCalles("General Paz","Pedro de Vega")));
-		esquinas.put(new VectorCalles("General Paz","Angel Cassanello"), Arrays.asList(new VectorCalles("General Paz","Dorrego"), null, new VectorCalles("General Paz","J.P.López"), new VectorCalles("General Paz","Ricardo Aldao")));
+		esquinas.put(new VectorCalles("General Paz","Angel Cassanello"), Arrays.asList(new VectorCalles("Dorrego","Angel Cassanello"), null, new VectorCalles("General Paz","J.P.López"), new VectorCalles("General Paz","Ricardo Aldao")));
 		esquinas.put(new VectorCalles("General Paz","J.P.López"), Arrays.asList(null, null, new VectorCalles("General Paz","Hernandarias"), new VectorCalles("General Paz","Angel Cassanello")));
 		esquinas.put(new VectorCalles("Almirante Brown","Hernandarias"), Arrays.asList(new VectorCalles("Almirante Brown","Juan Castelli"), new VectorCalles("Defensa","Hernandarias"), new VectorCalles("Almirante Brown","Riobamba"), new VectorCalles("Almirante Brown","J.P.López")));
 		esquinas.put(new VectorCalles("Almirante Brown","Riobamba"), Arrays.asList(null, null, new VectorCalles("Riobamba","Juan Castelli"), null));
@@ -303,7 +304,7 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 		esquinas.put(new VectorCalles("General Paz","Padre Genesio"), Arrays.asList(null, null, new VectorCalles("General Paz","Javier de la Rosa"), new VectorCalles("General Paz","Cardenal Fasolino")));
 		esquinas.put(new VectorCalles("General Paz","Javier de la Rosa"), Arrays.asList(new VectorCalles("Tacuarí","Javier de la Rosa"), null, new VectorCalles("General Paz","Regimiento 12 de Infantería"), new VectorCalles("General Paz","Padre Genesio")));
 		esquinas.put(new VectorCalles("General Paz","Regimiento 12 de Infantería"), Arrays.asList(null, null, null, new VectorCalles("General Paz","Javier de la Rosa")));
-		
+		esquinas.put(new VectorCalles("Italia","Regimiento 12 de Infantería"), Arrays.asList(null, new VectorCalles("Riobamba","Regimiento 12 de Infantería"),null, new VectorCalles("Almirante Brown","Javier de la Rosa")));
 	}
 
 

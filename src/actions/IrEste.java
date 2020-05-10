@@ -14,6 +14,8 @@ public class IrEste extends SearchAction{
 	public SearchBasedAgentState execute(SearchBasedAgentState s) {
 		// TODO Auto-generated method stub
 		EstadoAgenteCustodia agState = (EstadoAgenteCustodia) s;
+		//System.out.println("->"+agState.getUbicacionActual());
+		//System.out.println(agState.getEsquinas().get(agState.getUbicacionActual()));
         VectorCalles esquinaSiguiente = agState.getEsquinas().get(agState.getUbicacionActual()).get(0); //Get(0) porque el orden de las esquinas siguientes es "Este,Oeste,Norte,Sur"
         //Las direcciones en las que no pueden moverse el agente desde la esquina en la que está tienen asignado un "0" 
         if(esquinaSiguiente!=null && !agState.getListaCallesCortadas().contains(esquinaSiguiente)){

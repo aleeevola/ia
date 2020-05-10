@@ -33,9 +33,9 @@ public class Ambiente extends Environment {
 		
 		 List<VectorCalles> listaInfectados=new ArrayList<VectorCalles>();
     	listaInfectados.add(new VectorCalles("Echagüe","Obispo Boneo"));
-    	listaInfectados.add(new VectorCalles("Tacuarí","Angel Cassanello"));
-    	listaInfectados.add(new VectorCalles("Tacuarí","Espora"));
-    	listaInfectados.add(new VectorCalles("Almirante Brown","Juan Castelli"));
+    	//listaInfectados.add(new VectorCalles("Tacuarí","Angel Cassanello"));
+    	//listaInfectados.add(new VectorCalles("Tacuarí","Espora"));
+    	//listaInfectados.add(new VectorCalles("Almirante Brown","Juan Castelli"));
     	perception.setInfectados((ArrayList<VectorCalles>) listaInfectados);
 		/*
 		 * No se como implementarlo xq segun entiendo para mi son aleatorias las percepciones*/
