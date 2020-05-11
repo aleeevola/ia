@@ -32,7 +32,7 @@ public class Ambiente extends Environment {
 		PerceptionAgenteCustodia perception = new PerceptionAgenteCustodia();
 		
 		 List<VectorCalles> listaInfectados=new ArrayList<VectorCalles>();
-    	listaInfectados.add(new VectorCalles("Echagüe","Obispo Boneo"));
+    	listaInfectados.add(new VectorCalles("Almirante Brown","Ricardo Aldao"));
     	//listaInfectados.add(new VectorCalles("Tacuarí","Angel Cassanello"));
     	//listaInfectados.add(new VectorCalles("Tacuarí","Espora"));
     	//listaInfectados.add(new VectorCalles("Almirante Brown","Juan Castelli"));

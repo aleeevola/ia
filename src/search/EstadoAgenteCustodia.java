@@ -18,7 +18,7 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 
     public EstadoAgenteCustodia() {
  
-    	cargarMapa();  
+    	cargarMapaReducido();
     	ubicacionActual = new VectorCalles();
     	listaInfectados = new ArrayList<VectorCalles>();
     	listaCallesCortadas = new ArrayList<VectorCalles>();
@@ -306,7 +306,13 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 		esquinas.put(new VectorCalles("General Paz","Regimiento 12 de Infantería"), Arrays.asList(null, null, null, new VectorCalles("General Paz","Javier de la Rosa")));
 		esquinas.put(new VectorCalles("Italia","Regimiento 12 de Infantería"), Arrays.asList(null, new VectorCalles("Riobamba","Regimiento 12 de Infantería"),null, new VectorCalles("Almirante Brown","Javier de la Rosa")));
 	}
-
+	
+	private void cargarMapaReducido() {
+		esquinas.put(new VectorCalles("Almirante Brown","Pedro de Vega"), Arrays.asList(null, new VectorCalles("Echagüe","Pedro de Vega"), new VectorCalles("Almirante Brown","Ricardo Aldao"),  null));
+		esquinas.put(new VectorCalles("Almirante Brown","Ricardo Aldao"), Arrays.asList(null, null, null, new VectorCalles("Almirante Brown","Pedro de Vega")));
+		esquinas.put(new VectorCalles("Echagüe","Pedro de Vega"), Arrays.asList(null, null, new VectorCalles("Echagüe","Ricardo Aldao"), null));
+		esquinas.put(new VectorCalles("Echagüe","Ricardo Aldao"), Arrays.asList(new VectorCalles("Almirante Brown","Ricardo Aldao"), null, null, null));
+	}
 
 	public void sumarMultado() {
 		cantidadMultados++;

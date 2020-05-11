@@ -14,10 +14,10 @@ public class IrEste extends SearchAction{
 	public SearchBasedAgentState execute(SearchBasedAgentState s) {
 		// TODO Auto-generated method stub
 		EstadoAgenteCustodia agState = (EstadoAgenteCustodia) s;
-		//System.out.println("->"+agState.getUbicacionActual());
 		//System.out.println(agState.getEsquinas().get(agState.getUbicacionActual()));
-        VectorCalles esquinaSiguiente = agState.getEsquinas().get(agState.getUbicacionActual()).get(0); //Get(0) porque el orden de las esquinas siguientes es "Este,Oeste,Norte,Sur"
-        //Las direcciones en las que no pueden moverse el agente desde la esquina en la que está tienen asignado un "0" 
+        VectorCalles esquinaSiguiente = (agState.getEsquinas().get(agState.getUbicacionActual())).get(0); //Get(0) porque el orden de las esquinas siguientes es "Este,Oeste,Norte,Sur"
+        //Las direcciones en las que no pueden moverse el agente desde la esquina en la que está tienen asignado null 
+        //System.out.println("EsquinaSiguiente"+esquinaSiguiente);
         if(esquinaSiguiente!=null && !agState.getListaCallesCortadas().contains(esquinaSiguiente)){
         	agState.setUbicacionActual(esquinaSiguiente);
         	return agState;
@@ -28,7 +28,7 @@ public class IrEste extends SearchAction{
 
 	@Override
 	public Double getCost() {
-		return new Double(1);
+		return new Double(2);
 	}
 
 	@Override

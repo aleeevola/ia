@@ -58,7 +58,6 @@ public class AgenteCustodia extends SearchBasedAgent{
 
         // Set the Search searchSolver.
         this.setSolver(searchSolver);
-
         // Ask the solver for the best action
         Action selectedAction = null;
         try {

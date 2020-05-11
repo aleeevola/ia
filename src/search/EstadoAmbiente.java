@@ -20,7 +20,7 @@ public class EstadoAmbiente extends EnvironmentState {
     	listaInfectados = new ArrayList<VectorCalles>();
     	listaCallesCortadas = new ArrayList<VectorCalles>();
     	posicionAgenteCustodia = new VectorCalles();
-    	
+    	cantidadMultados=0;
         this.initState();
     }
 
@@ -34,7 +34,7 @@ public class EstadoAmbiente extends EnvironmentState {
     	VectorCalles v1 = new VectorCalles("Almirante Brown","Pedro de Vega");
     	posicionAgenteCustodia = v1; 	
     	
-    	listaInfectados.add(new VectorCalles("Echagüe","Obispo Boneo"));
+    	listaInfectados.add(new VectorCalles("Almirante Brown","Ricardo Aldao"));
     	//listaInfectados.add(new VectorCalles("Tacuarí","Angel Cassanello"));
     	//listaInfectados.add(new VectorCalles("Tacuarí","Espora"));
     	//listaInfectados.add(new VectorCalles("Almirante Brown","Juan Castelli"));
