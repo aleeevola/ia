@@ -126,7 +126,7 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 	public void initState() {
 		// TODO Auto-generated method stub
 		VectorCalles v1 = new VectorCalles("Almirante Brown","Pedro de Vega");
-		
+		listaCallesCortadas.add(new VectorCalles("Echagüe","Pedro de Vega")); //TODO si pongo aca las calles cortadas funciona, si las pongo en EstadoAmbiente.java no funciona
 		ubicacionActual = v1; 
 		cantidadMultados = 0;
 	}

@@ -33,8 +33,9 @@ public class EstadoAmbiente extends EnvironmentState {
     	//El estado inicial del estado del Ambiente; el escenario de entrada
     	VectorCalles v1 = new VectorCalles("Almirante Brown","Pedro de Vega");
     	posicionAgenteCustodia = v1; 	
-    	
+    	listaCallesCortadas.add(new VectorCalles("Echagüe","Pedro de Vega"));
     	listaInfectados.add(new VectorCalles("Almirante Brown","Ricardo Aldao"));
+    	
     	//listaInfectados.add(new VectorCalles("Tacuarí","Angel Cassanello"));
     	//listaInfectados.add(new VectorCalles("Tacuarí","Espora"));
     	//listaInfectados.add(new VectorCalles("Almirante Brown","Juan Castelli"));
