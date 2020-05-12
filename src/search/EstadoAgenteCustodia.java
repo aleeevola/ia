@@ -18,7 +18,7 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 
     public EstadoAgenteCustodia() {
  
-    	cargarMapaReducido();
+    	cargarMapa();
     	ubicacionActual = new VectorCalles();
     	listaInfectados = new ArrayList<VectorCalles>();
     	listaCallesCortadas = new ArrayList<VectorCalles>();
@@ -157,7 +157,7 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 		esquinas.put(new VectorCalles("Patricio Cullen","Pedro de Vega"), Arrays.asList(null, new VectorCalles("Antonia Godoy","Pedro de Vega"), new VectorCalles("Patricio Cullen","Ricardo Aldao"), null));
 		esquinas.put(new VectorCalles("Patricio Cullen","Ricardo Aldao"), Arrays.asList(new VectorCalles("Echagüe","Ricardo Aldao"), null, new VectorCalles("Patricio Cullen","Angel Cassanello"), null));
 		esquinas.put(new VectorCalles("Patricio Cullen","Angel Cassanello"), Arrays.asList(new VectorCalles("Echagüe","Angel Cassanello"), new VectorCalles("Antonia Godoy","Angel Cassanello"), new VectorCalles("Patricio Cullen","J.P.López"), null));
-		esquinas.put(new VectorCalles("Patricio Cullen","J.P.López"), Arrays.asList(new VectorCalles("Echagüe","J.P.López"), null, new VectorCalles("Patricio Cullen","Pje Pujato"), null));
+		esquinas.put(new VectorCalles("Patricio Cullen","J.P.López"), Arrays.asList(new VectorCalles("Echagüe","J.P.López"), null, new VectorCalles("Patricio Cullen","Pje. Pujato"), null));
 		esquinas.put(new VectorCalles("Antonia Godoy","Pedro de Vega"), Arrays.asList(null, new VectorCalles("Piedras","Pedro de Vega"), null, null));
 		esquinas.put(new VectorCalles("Antonia Godoy","Ricardo Aldao"), Arrays.asList(new VectorCalles("Patricio Cullen","Ricardo Aldao"), null, null, new VectorCalles("Antonia Godoy","Pedro de Vega")));
 		esquinas.put(new VectorCalles("Antonia Godoy","Angel Cassanello"), Arrays.asList(new VectorCalles("Piedras","Angel Cassanello"), new VectorCalles("Patricio Cullen","Angel Cassanello"), null, new VectorCalles("Antonia Godoy","Ricardo Aldao")));
@@ -165,7 +165,7 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 		esquinas.put(new VectorCalles("Piedras","Pedro de Vega"), Arrays.asList(null, new VectorCalles("Tacuarí","Pedro de Vega"), new VectorCalles("Piedras","Ricardo Aldao"), null));
 		esquinas.put(new VectorCalles("Piedras","Ricardo Aldao"), Arrays.asList(new VectorCalles("Antonia Godoy","Ricardo Aldao"), null, new VectorCalles("Piedras","Angel Cassanello"), null));
 		esquinas.put(new VectorCalles("Piedras","Angel Cassanello"), Arrays.asList(new VectorCalles("Antonia Godoy","Angel Cassanello"), new VectorCalles("Tacuarí","Angel Cassanello"), new VectorCalles("Piedras","J.P.López"), null));
-		esquinas.put(new VectorCalles("Piedras","J.P.López"), Arrays.asList(new VectorCalles("Antonia Godoy","J.P.López"), null, new VectorCalles("Piedras","Pje Pujato"), null));
+		esquinas.put(new VectorCalles("Piedras","J.P.López"), Arrays.asList(new VectorCalles("Antonia Godoy","J.P.López"), null, new VectorCalles("Piedras","Pje. Pujato"), null));
 		esquinas.put(new VectorCalles("Tacuarí","Pedro de Vega"), Arrays.asList(null, new VectorCalles("Vélez Sarsfield","Pedro de Vega"), null, null));
 		esquinas.put(new VectorCalles("Tacuarí","Ricardo Aldao"), Arrays.asList(new VectorCalles("Piedras","Ricardo Aldao"), null, null, new VectorCalles("Tacuarí","Pedro de Vega")));
 		esquinas.put(new VectorCalles("Tacuarí","Angel Cassanello"), Arrays.asList(new VectorCalles("Piedras","Angel Cassanello"), new VectorCalles("Vélez Sarsfield","Angel Cassanello"), null, new VectorCalles("Tacuarí","Ricardo Aldao")));
@@ -185,7 +185,7 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 		esquinas.put(new VectorCalles("Almirante Brown","Riobamba"), Arrays.asList(null, null, new VectorCalles("Riobamba","Juan Castelli"), null));
 		esquinas.put(new VectorCalles("Almirante Brown","Juan Castelli"), Arrays.asList(null, null, new VectorCalles("Almirante Brown","Estanislao Zeballos"), new VectorCalles("Almirante Brown","Hernandarias")));
 		esquinas.put(new VectorCalles("Almirante Brown","Estanislao Zeballos"), Arrays.asList(null, new VectorCalles("Riobamba","Estanislao Zeballos"), new VectorCalles("Almirante Brown","Obispo Boneo"), new VectorCalles("Almirante Brown","Juan Castelli")));
-		esquinas.put(new VectorCalles("Riobamba","Juan Castelli"), Arrays.asList(new VectorCalles("Almirante Brown","Juan Castelli"), null, new VectorCalles("Río Bamba","Estanislao Zeballos"), null));
+		esquinas.put(new VectorCalles("Riobamba","Juan Castelli"), Arrays.asList(new VectorCalles("Almirante Brown","Juan Castelli"), null, new VectorCalles("Riobamba","Estanislao Zeballos"), null));
 		esquinas.put(new VectorCalles("Riobamba","Estanislao Zeballos"), Arrays.asList(null, new VectorCalles("Defensa","Estanislao Zeballos"), new VectorCalles("Riobamba","Obispo Boneo"), null));
 		esquinas.put(new VectorCalles("Defensa","Hernandarias"), Arrays.asList(null, new VectorCalles("Talcahuano","Hernandarias"), null, new VectorCalles("Defensa","J.P.López")));
 		esquinas.put(new VectorCalles("Defensa","Juan Castelli"), Arrays.asList(new VectorCalles("Riobamba","Juan Castelli"), null, null, new VectorCalles("Defensa","Hernandarias")));
@@ -194,7 +194,7 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 		esquinas.put(new VectorCalles("Talcahuano","Juan Castelli"), Arrays.asList(new VectorCalles("Defensa","Juan Castelli"), null, new VectorCalles("Talcahuano","Estanislao Zeballos"), null));
 		esquinas.put(new VectorCalles("Talcahuano","Estanislao Zeballos"), Arrays.asList(null, new VectorCalles("Echagüe","Estanislao Zeballos"), new VectorCalles("Talcahuano","Obispo Boneo"), null));
 		esquinas.put(new VectorCalles("Echagüe","Pje. Pujato"), Arrays.asList(null, new VectorCalles("Patricio Cullen","Pje. Pujato"), null, new VectorCalles("Echagüe","J.P.López")));
-		esquinas.put(new VectorCalles("Echagüe","Hernandarias"), Arrays.asList(null, new VectorCalles("Patricio Cullen","Hernandarias"), null, new VectorCalles("Echagüe","J.P. López")));
+		esquinas.put(new VectorCalles("Echagüe","Hernandarias"), Arrays.asList(null, new VectorCalles("Patricio Cullen","Hernandarias"), null, new VectorCalles("Echagüe","J.P.López")));
 		esquinas.put(new VectorCalles("Echagüe","Juan Castelli"), Arrays.asList(new VectorCalles("Talcahuano","Juan Castelli"), null, null, new VectorCalles("Echagüe","Hernandarias")));
 		esquinas.put(new VectorCalles("Echagüe","Estanislao Zeballos"), Arrays.asList(null, new VectorCalles("Patricio Cullen","Estanislao Zeballos"), null, new VectorCalles("Echagüe","Juan Castelli")));
 		esquinas.put(new VectorCalles("Patricio Cullen","Pje. Pujato"), Arrays.asList(new VectorCalles("Echagüe","Pje. Pujato"), new VectorCalles("Antonia Godoy","Pje. Pujato"), new VectorCalles("Patricio Cullen","Hernandarias"), null));
@@ -216,7 +216,7 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 		esquinas.put(new VectorCalles("Velez Sarfield","Hernandarias"), Arrays.asList(null, new VectorCalles("General Paz","Hernandarias"), new VectorCalles("Velez Sarfield","Juan Castelli"), null));
 		esquinas.put(new VectorCalles("Velez Sarfield","Juan Castelli"), Arrays.asList(new VectorCalles("Tacuarí","Juan Castelli"), null, new VectorCalles("Velez Sarfield","Estanislao Zeballos"), null));
 		esquinas.put(new VectorCalles("Velez Sarfield","Estanislao Zeballos"), Arrays.asList(null, new VectorCalles("General Paz","Estanislao Zeballos"), null, null));
-		esquinas.put(new VectorCalles("General Paz","Hernandarias"), Arrays.asList(null, null, new VectorCalles("General Paz","Juan Castelli"), new VectorCalles("General Paz","J.P. López")));
+		esquinas.put(new VectorCalles("General Paz","Hernandarias"), Arrays.asList(null, null, new VectorCalles("General Paz","Juan Castelli"), new VectorCalles("General Paz","J.P.López")));
 		esquinas.put(new VectorCalles("General Paz","Juan Castelli"), Arrays.asList(null, null, new VectorCalles("General Paz","Estanislao Zeballos"), new VectorCalles("General Paz","Hernandarias")));
 		esquinas.put(new VectorCalles("General Paz","Estanislao Zeballos"), Arrays.asList(null, null, new VectorCalles("General Paz","Obispo Boneo"), new VectorCalles("General Paz","Juan Castelli")));
 		esquinas.put(new VectorCalles("Almirante Brown","Obispo Boneo"), Arrays.asList(null, null, new VectorCalles("Almirante Brown","Espora"), new VectorCalles("Almirante Brown","Estanislao Zeballos")));
@@ -305,6 +305,9 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 		esquinas.put(new VectorCalles("General Paz","Javier de la Rosa"), Arrays.asList(new VectorCalles("Tacuarí","Javier de la Rosa"), null, new VectorCalles("General Paz","Regimiento 12 de Infantería"), new VectorCalles("General Paz","Padre Genesio")));
 		esquinas.put(new VectorCalles("General Paz","Regimiento 12 de Infantería"), Arrays.asList(null, null, null, new VectorCalles("General Paz","Javier de la Rosa")));
 		esquinas.put(new VectorCalles("Italia","Regimiento 12 de Infantería"), Arrays.asList(null, new VectorCalles("Riobamba","Regimiento 12 de Infantería"),null, new VectorCalles("Almirante Brown","Javier de la Rosa")));
+		
+		esquinas.put(new VectorCalles("Echagüe","J.P.López"), Arrays.asList(new VectorCalles("Talcahuano","J.P.López"), null,null, new VectorCalles("Echagüe","Angel Cassanello")));
+	
 	}
 	
 	private void cargarMapaReducido() {

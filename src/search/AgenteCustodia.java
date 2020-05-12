@@ -14,6 +14,7 @@ import frsf.cidisi.faia.agent.Perception;
 import frsf.cidisi.faia.agent.search.Problem;
 import frsf.cidisi.faia.agent.search.SearchAction;
 import frsf.cidisi.faia.agent.search.SearchBasedAgent;
+import frsf.cidisi.faia.solver.search.BreathFirstSearch;
 import frsf.cidisi.faia.solver.search.DepthFirstSearch;
 import frsf.cidisi.faia.solver.search.Search;
 
@@ -28,12 +29,13 @@ public class AgenteCustodia extends SearchBasedAgent{
         this.setAgentState(agState);
 
         // Create the operators
-        Vector<SearchAction> operators = new Vector<SearchAction>();	
+        Vector<SearchAction> operators = new Vector<SearchAction>();
+        operators.addElement(new Multar());
         operators.addElement(new IrEste());
         operators.addElement(new IrOeste());	
         operators.addElement(new IrNorte());
         operators.addElement(new IrSur());
-        operators.addElement(new Multar());
+        
 
         // Create the Problem which the agent will resolve
         Problem problem = new Problem(agGoal, agState, operators);
@@ -47,7 +49,30 @@ public class AgenteCustodia extends SearchBasedAgent{
     public Action selectAction() {
 
         // Create the search strategy
-    	DepthFirstSearch strategy = new DepthFirstSearch();          
+    	//DepthFirstSearch strategy = new DepthFirstSearch();     
+    	
+    	/**
+         * Another search strategy examples:
+         * 
+         * Depth First Search:
+         * DepthFirstSearch strategy = new DepthFirstSearch();
+         */
+         //Breath First Search:
+         BreathFirstSearch strategy = new BreathFirstSearch();
+         /* 
+         * Uniform Cost:
+         * IStepCostFunction costFunction = new CostFunction();
+         * UniformCostSearch strategy = new UniformCostSearch(costFunction);
+         * 
+         * A Star Search:
+         * IStepCostFunction cost = new CostFunction();
+         * IEstimatedCostFunction heuristic = new Heuristic();
+         * AStarSearch strategy = new AStarSearch(cost, heuristic);
+         * 
+         * Greedy Search:
+         * IEstimatedCostFunction heuristic = new Heuristic();
+         * GreedySearch strategy = new GreedySearch(heuristic);
+         */
 
         // Create a Search object with the strategy
         Search searchSolver = new Search(strategy);
