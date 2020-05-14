@@ -32,14 +32,51 @@ public class Ambiente extends Environment {
 		PerceptionAgenteCustodia perception = new PerceptionAgenteCustodia();
 		
 		 List<VectorCalles> listaInfectados=new ArrayList<VectorCalles>();
+		 List<VectorCalles> listaAux=new ArrayList<VectorCalles>();
+		 List<VectorCalles> callesCortadas=new ArrayList<VectorCalles>();
     	//listaInfectados.add(new VectorCalles("Almirante Brown","Ricardo Aldao"));
-    	listaInfectados.add(new VectorCalles("Tacuarí","Angel Cassanello"));
+		 //listaInfectados.add(new VectorCalles("Riobamba","Obispo Boneo"));
+    	//listaInfectados.add(new VectorCalles("Tacuarí","Angel Cassanello"));
     	//listaInfectados.add(new VectorCalles("Tacuarí","Espora"));
+		 //listaInfectados.add(new VectorCalles("Patricio Cullen","Obispo Príncipe"));
     	//listaInfectados.add(new VectorCalles("Almirante Brown","Juan Castelli"));
+		 
+		listaAux.add(new VectorCalles("Almirante Brown","Ricardo Aldao"));
+		listaAux.add(new VectorCalles("Riobamba","Obispo Boneo"));
+		listaAux.add(new VectorCalles("Talcahuano","Hernandarias"));
+    	listaAux.add(new VectorCalles("Tacuarí","Angel Cassanello"));
+    	listaAux.add(new VectorCalles("Antonia Godoy","J.P.López"));
+    	listaAux.add(new VectorCalles("Antonia Godoy","Hernandarias"));
+    	listaAux.add(new VectorCalles("Echagüe","Ricardo Aldao"));
+    	listaAux.add(new VectorCalles("Echagüe","Hernandarias"));
+    	listaAux.add(new VectorCalles("Echagüe","Estanislao Zeballos"));
+    	listaAux.add(new VectorCalles("Patricio Cullen","Juan Castelli"));
+    	listaAux.add(new VectorCalles("Patricio Cullen","Obispo Príncipe"));
+    	listaAux.add(new VectorCalles("Vélez Sarsfield","J.P.López"));
+    	listaAux.add(new VectorCalles("Tacuarí","Juan Castelli"));
+    	listaAux.add(new VectorCalles("Almirante Brown","Juan Castelli"));
+    	listaAux.add(new VectorCalles("Tacuarí","Espora"));
+    	listaAux.add(new VectorCalles("General Paz","Cardenal Fasolino"));
+    	listaAux.add(new VectorCalles("Defensa","Alberti"));
+    	listaAux.add(new VectorCalles("Echagüe","Padre Genesio"));
+    	listaAux.add(new VectorCalles("Piedras","Javier de la Rosa"));
+    	listaAux.add(new VectorCalles("General Paz","Pedro de Vega"));
+    	
+    	
+    	int i = (int) (Math.random() * 20);
+    	int i2 = (int) (Math.random() * 20);
+    	
+    	if(i2<5){
+    		listaInfectados.add(listaAux.get(i));
+    		//if(i>5) callesCortadas.add(listaAux.get(i+1));
+    	} else {
+    	//i2<5 es una condición arbitraria para que en algunas iteraciones se agreguen ciudadados-infectados y en otras no.
+    	if(!callesCortadas.isEmpty())callesCortadas.remove(callesCortadas.get(0));
+    	}
+    
+    	
     	perception.setInfectados((ArrayList<VectorCalles>) listaInfectados);
-		/*
-		 * No se como implementarlo xq segun entiendo para mi son aleatorias las percepciones*/
-		
+		perception.setCallesCortadas((ArrayList<VectorCalles>)callesCortadas);
 		return perception;
 	}
 	
