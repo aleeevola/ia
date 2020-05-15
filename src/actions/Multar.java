@@ -5,6 +5,7 @@ import frsf.cidisi.faia.agent.search.SearchAction;
 import frsf.cidisi.faia.agent.search.SearchBasedAgentState;
 import frsf.cidisi.faia.state.AgentState;
 import frsf.cidisi.faia.state.EnvironmentState;
+import interfaz.MainAgenteCustodia;
 import search.EstadoAgenteCustodia;
 import search.EstadoAmbiente;
 import search.VectorCalles;
@@ -54,6 +55,9 @@ public class Multar extends SearchAction{
 	      //Si la posicion actual se encuentra en la lista de ubicaciones de ciudadanos infectados que incumplen la cuarentena, se multa
 	        if(agState.getListaInfectados().contains(agState.getUbicacionActual())){
 	        	System.out.println("-> entro al if");
+	        	
+	        	MainAgenteCustodia.agregarMultado(agState.getUbicacionActual());
+	        	
 	        	agState.getListaInfectados().remove(agState.getUbicacionActual());
 	        	agState.sumarMultado();
 	        	
