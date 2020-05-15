@@ -7,6 +7,7 @@ import java.util.List;
 
 import frsf.cidisi.faia.agent.Perception;
 import frsf.cidisi.faia.agent.search.SearchBasedAgentState;
+import interfaz.MainAgenteCustodia;
 
 public class EstadoAgenteCustodia extends SearchBasedAgentState{
 	
@@ -92,6 +93,7 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 					 * segun entiendo el contains usa el metodo equals
 					 * (puede fallar eso xd) pero creo que lo hice bien*/
 					this.getListaInfectados().add(infectado);
+					MainAgenteCustodia.agregarInfectado(infectado);
 				}
 			}
 		}

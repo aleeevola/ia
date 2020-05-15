@@ -24,6 +24,7 @@ import com.teamdev.jxmaps.PolylineOptions;
 
 import com.teamdev.jxmaps.swing.MapView;
 
+
 import frsf.cidisi.faia.exceptions.PrologConnectorException;
 import frsf.cidisi.faia.simulator.SearchBasedAgentSimulator;
 import search.AgenteCustodia;
@@ -43,6 +44,7 @@ public class MainAgenteCustodia extends MapView {
 	public LatLng locationdefault;
 	private static HashMap<VectorCalles,LatLng> coordenadas=new HashMap<VectorCalles,LatLng>();
 	   
+	
 	public static Map map;
 	
 	public static Map getMapaAgente() {
@@ -98,17 +100,18 @@ public class MainAgenteCustodia extends MapView {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        final MainAgenteCustodia sample = new MainAgenteCustodia();
+        final MainAgenteCustodia mapa = new MainAgenteCustodia();
         cargarMapa();
     	
     	
         JFrame frame = new JFrame("Agente custodia");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.add(sample, BorderLayout.CENTER);
+        //frame.add(sample, BorderLayout.WEST);
         frame.setSize(700, 500);
         frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
-        
+		frame.add(mapa, BorderLayout.CENTER);
+		
+		frame.setVisible(true);
     }
     
     public static void iniciarBusqueda() {
@@ -125,26 +128,32 @@ public class MainAgenteCustodia extends MapView {
    
     
     public static void trazarDesplazamiento(VectorCalles origen, VectorCalles destino) {
+    	try {
+    		LatLng esquinaOrigen=coordenadas.get(origen);
+        	LatLng esquinaDestino=coordenadas.get(destino);
     	
-    	LatLng esquinaOrigen=coordenadas.get(origen);
-    	LatLng esquinaDestino=coordenadas.get(destino);
-    	
-    	
-    	LatLng[] path = {esquinaOrigen,esquinaDestino};
-        // Creating a new polyline object
-        Polyline polyline = new Polyline(map);
-        // Initializing the polyline with created path
-        polyline.setPath(path);
-        // Creating a polyline options object
-        PolylineOptions options = new PolylineOptions();
-        // Setting stroke color value
-        options.setStrokeColor("#FF0000");
-        // Setting stroke opacity value
-        options.setStrokeOpacity(1.0);
-        // Setting stroke weight value
-        options.setStrokeWeight(2.0);
-        // Applying options to the polyline
-        polyline.setOptions(options);
+	    	LatLng[] path = {esquinaOrigen,esquinaDestino};
+	        // Creating a new polyline object
+	        Polyline polyline = new Polyline(map);
+	        // Initializing the polyline with created path
+	        polyline.setPath(path);
+	        // Creating a polyline options object
+	        PolylineOptions options = new PolylineOptions();
+	        // Setting stroke color value
+	        options.setStrokeColor("#FF0000");
+	        // Setting stroke opacity value
+	        options.setStrokeOpacity(1.0);
+	        // Setting stroke weight value
+	        options.setStrokeWeight(2.0);
+	        // Applying options to the polyline
+	        polyline.setOptions(options);
+        
+    	}catch(Exception e){
+    		System.out.println("Hay un error con una de estas dos calles");
+    		System.out.println("--->"+origen.toString());
+    		System.out.println("--->"+destino.toString());
+    		return;
+    	}
     }
     
     
@@ -174,8 +183,9 @@ public class MainAgenteCustodia extends MapView {
          // Creating an information window
          marker.setIcon("http://maps.google.com/mapfiles/ms/micons/yellow-dot.png");
          InfoWindow infoWindow = new InfoWindow(map);
+         marker.setVisible(true);
          // Putting the address and location to the content of the information window
-         infoWindow.setContent("Fue multado! "+esquina.toString());
+         //infoWindow.setContent("Fue multado! "+esquina.toString());
          // Moving the information window to the result location
         
          // Showing of the information window
