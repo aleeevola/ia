@@ -24,7 +24,6 @@ import com.teamdev.jxmaps.PolylineOptions;
 
 import com.teamdev.jxmaps.swing.MapView;
 
-
 import frsf.cidisi.faia.exceptions.PrologConnectorException;
 import frsf.cidisi.faia.simulator.SearchBasedAgentSimulator;
 import search.AgenteCustodia;
@@ -33,8 +32,12 @@ import search.VectorCalles;
 
 import javax.swing.*;
 import java.awt.*;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
@@ -43,7 +46,13 @@ public class MainAgenteCustodia extends MapView {
     
 	public LatLng locationdefault;
 	private static HashMap<VectorCalles,LatLng> coordenadas=new HashMap<VectorCalles,LatLng>();
-	   
+	
+	private static JFrame frame = new JFrame("Agente custodia");
+	private static JPanel panelEstado=new JPanel();
+	private static TablaActions tablaAcciones = new TablaActions();
+	private static JTable tablaA;
+	private static ArrayList<String> acciones=new ArrayList();
+
 	
 	public static Map map;
 	
@@ -89,10 +98,8 @@ public class MainAgenteCustodia extends MapView {
                     // Setting initial zoom value
                     map.setZoom(15.0f);
                     
-                    agregarMultado(new VectorCalles("Almirante Brown","Pedro de Vega"));
-                    //Cuando esta listo hace la busqueda
-                    iniciarBusqueda();
-                    
+                   iniciarBusqueda();
+             
                     
                 }
             }
@@ -103,18 +110,42 @@ public class MainAgenteCustodia extends MapView {
         final MainAgenteCustodia mapa = new MainAgenteCustodia();
         cargarMapa();
     	
-    	
-        JFrame frame = new JFrame("Agente custodia");
+        
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         //frame.add(sample, BorderLayout.WEST);
-        frame.setSize(700, 500);
+        frame.setSize(800, 500);
         frame.setLocationRelativeTo(null);
 		frame.add(mapa, BorderLayout.CENTER);
+		
+		
+		cargarPanelEstado();
 		
 		frame.setVisible(true);
     }
     
-    public static void iniciarBusqueda() {
+    private static void cargarPanelEstado() {
+    	/*JLabel estado = new JLabel();
+		estado.setText("hola mundo");
+		panelEstado.add(estado, BorderLayout.NORTH);*/
+		panelEstado.setPreferredSize(new Dimension(200,800));
+		
+    	
+		tablaA = new JTable(tablaAcciones);
+		tablaA.setFillsViewportHeight(true);
+		tablaA.setRowSelectionAllowed(true);
+		tablaA.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		tablaA.setPreferredScrollableViewportSize(new Dimension (200,500));
+		JScrollPane scrollPaneT = new JScrollPane(tablaA);
+		
+		panelEstado.add(scrollPaneT, BorderLayout.CENTER);
+		
+		
+		
+		frame.add(panelEstado, BorderLayout.EAST);
+    }
+    
+    private static void iniciarBusqueda() {
+
     	AgenteCustodia agent = new AgenteCustodia();
 
         Ambiente environment = new Ambiente();
@@ -218,7 +249,11 @@ public class MainAgenteCustodia extends MapView {
             }
         });
 }
-    
+	public static void actualizarAccion(String accion) {
+		acciones.add(accion);
+		tablaAcciones.setTitulares(acciones);
+		tablaAcciones.fireTableDataChanged();
+	}
     
     private static void cargarMapa() {
     	coordenadas.put(new VectorCalles("Defensa","J.P.López"), new LatLng(-31.61353,-60.670341));
