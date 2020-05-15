@@ -130,7 +130,7 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 		VectorCalles v1 = new VectorCalles("Almirante Brown","Pedro de Vega");
 		
 		listaInfectados.add(new VectorCalles("Patricio Cullen","J.P.López"));
-		
+		listaCallesCortadas.add(new VectorCalles("Piedras","Hernandarias"));
 		
 		ubicacionActual = v1; 
 		cantidadMultados = 0;
@@ -356,6 +356,34 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 	public void setListaCallesCortadas(List<VectorCalles> listaCallesCortadas) {
 		this.listaCallesCortadas = listaCallesCortadas;
 	}
+	
+	public Double getHeuristic() {
+		//Double distancia = (double) 30; //Inicializo con la distancia más larga desde el punto de inicio 
+/*		Double minDistance = 45.00;
+		System.out.println("minDistance: " + minDistance);
+		
+		 Location locationA = new Location("punto A");
 
+		    locationA.setLatitude(latA);
+		    locationA.setLongitude(lngA);
 
-}
+		    Location locationB = new Location("punto B");
+
+		    locationB.setLatitude(latB);
+		    locationB.setLongitude(lngB);
+
+		    float distance = locationA.distanceTo(locationB);
+		
+		
+		for(VectorCalles vc: listaInfectados) {
+			double d = Math.abs(MainAgenteCustodia.distancia(vc, ubicacionActual));
+			if(d < minDistance) {
+				minDistance=d;
+			}
+		}
+				return minDistance;
+*/
+	return null;
+	}
+
+	}
