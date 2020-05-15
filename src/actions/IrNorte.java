@@ -40,7 +40,7 @@ public class IrNorte extends SearchAction{
         if(esquinaSiguiente!=null && !agState.getListaCallesCortadas().contains(esquinaSiguiente)){
         	
         	MainAgenteCustodia.trazarDesplazamiento(agState.getUbicacionActual(), esquinaSiguiente);
-        	
+        	MainAgenteCustodia.actualizarAccion(this.toString());
         	
         	environmentState.setposicionAgenteCustodia(esquinaSiguiente);
         	agState.setUbicacionActual(esquinaSiguiente);

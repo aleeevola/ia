@@ -57,6 +57,7 @@ public class Multar extends SearchAction{
 	        	System.out.println("-> entro al if");
 	        	
 	        	MainAgenteCustodia.agregarMultado(agState.getUbicacionActual());
+	        	MainAgenteCustodia.actualizarAccion(this.toString());
 	        	
 	        	agState.getListaInfectados().remove(agState.getUbicacionActual());
 	        	agState.sumarMultado();
