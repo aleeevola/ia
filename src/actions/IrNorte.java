@@ -4,6 +4,7 @@ import frsf.cidisi.faia.agent.search.SearchAction;
 import frsf.cidisi.faia.agent.search.SearchBasedAgentState;
 import frsf.cidisi.faia.state.AgentState;
 import frsf.cidisi.faia.state.EnvironmentState;
+import interfaz.MainAgenteCustodia;
 import search.EstadoAgenteCustodia;
 import search.EstadoAmbiente;
 import search.VectorCalles;
@@ -37,6 +38,10 @@ public class IrNorte extends SearchAction{
         VectorCalles esquinaSiguiente = agState.getEsquinas().get(agState.getUbicacionActual()).get(2); //Get(2) porque el orden de las esquinas siguientes es "Este,Oeste,Norte,Sur"
         //Las direcciones en las que no pueden moverse el agente desde la esquina en la que está tienen asignado un "0" 
         if(esquinaSiguiente!=null && !agState.getListaCallesCortadas().contains(esquinaSiguiente)){
+        	
+        	MainAgenteCustodia.trazarDesplazamiento(agState.getUbicacionActual(), esquinaSiguiente);
+        	
+        	
         	environmentState.setposicionAgenteCustodia(esquinaSiguiente);
         	agState.setUbicacionActual(esquinaSiguiente);
         	
