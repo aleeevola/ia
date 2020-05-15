@@ -21,7 +21,7 @@ import com.teamdev.jxmaps.MapTypeControlOptions;
 import com.teamdev.jxmaps.Marker;
 import com.teamdev.jxmaps.Polyline;
 import com.teamdev.jxmaps.PolylineOptions;
-
+import com.teamdev.jxmaps.examples.PlacesSearchExample;
 import com.teamdev.jxmaps.swing.MapView;
 
 import frsf.cidisi.faia.exceptions.PrologConnectorException;
@@ -224,6 +224,24 @@ public class MainAgenteCustodia extends MapView {
          //infoWindow.open(map, marker);
          
      }
+    
+    public static void agregarCalleCortada(VectorCalles esquina) {
+   	   
+   	   Marker marker = new Marker(map);
+          // Setting position of the marker to the result location
+          marker.setPosition(coordenadas.get(esquina));
+          // Creating an information window
+          marker.setIcon("http://maps.google.com/mapfiles/ms/micons/caution.png");
+          InfoWindow infoWindow = new InfoWindow(map);
+          marker.setVisible(true);
+          // Putting the address and location to the content of the information window
+          //infoWindow.setContent("Fue multado! "+esquina.toString());
+          // Moving the information window to the result location
+         
+          // Showing of the information window
+          
+          //infoWindow.open(map, marker);
+      }
     
     public void getLocation(VectorCalles esquina) {
     	

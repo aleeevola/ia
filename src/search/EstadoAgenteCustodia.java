@@ -110,6 +110,7 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 					 * segun entiendo el contains usa el metodo equals
 					 * (puede fallar eso xd) pero creo que lo hice bien*/
 					this.getListaCallesCortadas().add(newCalle);
+					MainAgenteCustodia.agregarCalleCortada(newCalle);
 				}
 			}
 		}
