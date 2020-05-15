@@ -52,7 +52,8 @@ public class MainAgenteCustodia extends MapView {
 	private static TablaActions tablaAcciones = new TablaActions();
 	private static JTable tablaA;
 	private static ArrayList<String> acciones=new ArrayList();
-
+	private static JLabel multados = new JLabel();
+	private static int numeroMultados = 0;
 	
 	public static Map map;
 	
@@ -124,9 +125,12 @@ public class MainAgenteCustodia extends MapView {
     }
     
     private static void cargarPanelEstado() {
-    	/*JLabel estado = new JLabel();
-		estado.setText("hola mundo");
-		panelEstado.add(estado, BorderLayout.NORTH);*/
+    	JLabel NumMul = new JLabel();
+    	NumMul.setText("Numero de mulados:");
+		panelEstado.add(NumMul, BorderLayout.NORTH);
+		multados = new JLabel();
+		multados.setText("0");
+		panelEstado.add(multados, BorderLayout.NORTH);
 		panelEstado.setPreferredSize(new Dimension(200,800));
 		
     	
@@ -204,6 +208,8 @@ public class MainAgenteCustodia extends MapView {
         
         infoWindow.open(map, marker);
         
+        numeroMultados++;
+        multados.setText(String.valueOf(numeroMultados));
     }
     
     public static void agregarInfectado(VectorCalles esquina) {
