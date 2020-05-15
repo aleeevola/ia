@@ -79,7 +79,8 @@ public class AgenteCustodia extends SearchBasedAgent{
 
         /* Generate an XML file with the search tree. It can also be generated
          * in other formats like PDF with PDF_TREE */
-        searchSolver.setVisibleTree(Search.GRAPHICAL_TREE);
+        
+        //searchSolver.setVisibleTree(Search.EFAIA_TREE); comenté esto para q no haga 1000 arboles cada vez que lo corro.
 
         // Set the Search searchSolver.
         this.setSolver(searchSolver);
