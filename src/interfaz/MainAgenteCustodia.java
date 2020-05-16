@@ -31,6 +31,8 @@ import search.Ambiente;
 import search.VectorCalles;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -52,10 +54,14 @@ public class MainAgenteCustodia extends MapView {
 	private static TablaActions tablaAcciones = new TablaActions();
 	private static JTable tablaA;
 	private static ArrayList<String> acciones=new ArrayList();
+	private static TablaPercepciones tablaPercepciones = new TablaPercepciones();
+	private static JTable tablaP;
+	private static ArrayList<AuxPercepcion> percepciones=new ArrayList();
 	private static JLabel multados = new JLabel();
 	private static int numeroMultados = 0;
 	
 	public static Map map;
+	public static int numero_iteracion=0;
 	
 	public static Map getMapaAgente() {
 		return map;
@@ -107,14 +113,15 @@ public class MainAgenteCustodia extends MapView {
         });
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
+    	UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         final MainAgenteCustodia mapa = new MainAgenteCustodia();
         cargarMapa();
     	
         
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         //frame.add(sample, BorderLayout.WEST);
-        frame.setSize(800, 500);
+        frame.setSize(1000, 600);
         frame.setLocationRelativeTo(null);
 		frame.add(mapa, BorderLayout.CENTER);
 		
@@ -131,19 +138,25 @@ public class MainAgenteCustodia extends MapView {
 		multados = new JLabel();
 		multados.setText("0");
 		panelEstado.add(multados, BorderLayout.NORTH);
-		panelEstado.setPreferredSize(new Dimension(200,800));
+		panelEstado.setPreferredSize(new Dimension(300,800));
+		//panelEstado.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 		
     	
 		tablaA = new JTable(tablaAcciones);
 		tablaA.setFillsViewportHeight(true);
 		tablaA.setRowSelectionAllowed(true);
 		tablaA.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		tablaA.setPreferredScrollableViewportSize(new Dimension (200,500));
+		tablaA.setPreferredScrollableViewportSize(new Dimension (290,150));
 		JScrollPane scrollPaneT = new JScrollPane(tablaA);
-		
 		panelEstado.add(scrollPaneT, BorderLayout.CENTER);
 		
-		
+		tablaP = new JTable(tablaPercepciones);
+		tablaP.setFillsViewportHeight(true);
+		tablaP.setRowSelectionAllowed(true);
+		tablaP.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		tablaP.setPreferredScrollableViewportSize(new Dimension (290,150));
+		JScrollPane scrollPaneP = new JScrollPane(tablaP);
+		panelEstado.add(scrollPaneP, BorderLayout.SOUTH);
 		
 		frame.add(panelEstado, BorderLayout.EAST);
     }
@@ -195,16 +208,10 @@ public class MainAgenteCustodia extends MapView {
     public static void agregarMultado(VectorCalles esquina) {
  	   
  	   Marker marker = new Marker(map);
-        // Setting position of the marker to the result location
         marker.setPosition(coordenadas.get(esquina));
         marker.setIcon("http://maps.google.com/mapfiles/ms/micons/blue-dot.png");
-        // Creating an information window
         InfoWindow infoWindow = new InfoWindow(map);
-        // Putting the address and location to the content of the information window
         infoWindow.setContent("Fue multado! "+esquina.toString());
-        // Moving the information window to the result location
-       
-        // Showing of the information window
         
         infoWindow.open(map, marker);
         
@@ -215,38 +222,27 @@ public class MainAgenteCustodia extends MapView {
     public static void agregarInfectado(VectorCalles esquina) {
   	   
   	   Marker marker = new Marker(map);
-         // Setting position of the marker to the result location
          marker.setPosition(coordenadas.get(esquina));
-         // Creating an information window
          marker.setIcon("http://maps.google.com/mapfiles/ms/micons/yellow-dot.png");
          InfoWindow infoWindow = new InfoWindow(map);
          marker.setVisible(true);
-         // Putting the address and location to the content of the information window
-         //infoWindow.setContent("Fue multado! "+esquina.toString());
-         // Moving the information window to the result location
-        
-         // Showing of the information window
          
-         //infoWindow.open(map, marker);
+         AuxPercepcion percep= new AuxPercepcion(esquina,numero_iteracion,"Infectado");
+         actualizarPercepciones(percep);
+         
          
      }
     
     public static void agregarCalleCortada(VectorCalles esquina) {
    	   
-   	   Marker marker = new Marker(map);
-          // Setting position of the marker to the result location
+    	Marker marker = new Marker(map);
           marker.setPosition(coordenadas.get(esquina));
-          // Creating an information window
           marker.setIcon("http://maps.google.com/mapfiles/ms/micons/caution.png");
           InfoWindow infoWindow = new InfoWindow(map);
           marker.setVisible(true);
-          // Putting the address and location to the content of the information window
-          //infoWindow.setContent("Fue multado! "+esquina.toString());
-          // Moving the information window to the result location
-         
-          // Showing of the information window
           
-          //infoWindow.open(map, marker);
+          AuxPercepcion percep= new AuxPercepcion(esquina,numero_iteracion,"Calle Cortada");
+          actualizarPercepciones(percep);
       }
     
     public void getLocation(VectorCalles esquina) {
@@ -277,6 +273,12 @@ public class MainAgenteCustodia extends MapView {
 		acciones.add(accion);
 		tablaAcciones.setTitulares(acciones);
 		tablaAcciones.fireTableDataChanged();
+	}
+	
+	public static void actualizarPercepciones(AuxPercepcion percep) {
+		percepciones.add(percep);
+		tablaPercepciones.setPercepciones(percepciones);
+		tablaPercepciones.fireTableDataChanged();
 	}
     
     private static void cargarMapa() {
