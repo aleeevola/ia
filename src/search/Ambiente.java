@@ -6,6 +6,7 @@ import java.util.List;
 import frsf.cidisi.faia.agent.Action;
 import frsf.cidisi.faia.agent.Perception;
 import frsf.cidisi.faia.environment.Environment;
+import interfaz.MainAgenteCustodia;
 
 public class Ambiente extends Environment {
 	int cont = 0;
@@ -28,7 +29,8 @@ public class Ambiente extends Environment {
 	@Override
 	public Perception getPercept() {
 		// TODO REVISAR 
-		
+		//incrementa el numero de iteracion para agregarlo en la tabla y saber cuando se da cada percepcion.
+		MainAgenteCustodia.numero_iteracion++;
 		PerceptionAgenteCustodia perception = new PerceptionAgenteCustodia();
 		
 		 List<VectorCalles> listaInfectados=new ArrayList<VectorCalles>();
