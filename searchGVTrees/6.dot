@@ -1,0 +1,337 @@
+digraph g {
+node [shape = Mrecord];
+nodo0[label="{EO: 0|cost: 0.0|A: null}"]
+nodo1[label="{EO: 1|cost: 1.0|A: IrOeste}"]
+nodo4[label="{EO: 4|cost: 2.0|A: IrOeste|EstadoAgenteCustodia:
+	UbicacionActual=(Talcahuano\nAngel\nCassanello)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo8[label="{EO: 8|cost: 3.0|A: IrOeste|EstadoAgenteCustodia:
+	UbicacionActual=(Echagüe\nAngel\nCassanello)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo15[label="{EO: 15|cost: 4.0|A: IrOeste|EstadoAgenteCustodia:
+	UbicacionActual=(Patricio\nCullen\nAngel\nCassanello)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo27[label="{EO: 27|cost: 5.0|A: IrOeste|EstadoAgenteCustodia:
+	UbicacionActual=(Antonia\nGodoy\nAngel\nCassanello)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo46[label="{EO: 46|cost: 6.0|A: IrOeste|EstadoAgenteCustodia:
+	UbicacionActual=(Piedras\nAngel\nCassanello)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+
+nodo27 -> nodo46;
+nodo47[label="{EO: 47|cost: 6.0|A: IrNorte|EstadoAgenteCustodia:
+	UbicacionActual=(Piedras\nAngel\nCassanello)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+
+nodo27 -> nodo47;
+
+nodo15 -> nodo27;
+nodo28[label="{EO: 28|cost: 5.0|A: IrSur|EstadoAgenteCustodia:
+	UbicacionActual=(Antonia\nGodoy\nAngel\nCassanello)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo48[label="{EO: 48|cost: 6.0|A: IrEste|EstadoAgenteCustodia:
+	UbicacionActual=(Antonia\nGodoy\nRicardo\nAldao)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+
+nodo28 -> nodo48;
+nodo49[label="{EO: 49|cost: 6.0|A: IrSur|EstadoAgenteCustodia:
+	UbicacionActual=(Antonia\nGodoy\nRicardo\nAldao)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+
+nodo28 -> nodo49;
+
+nodo15 -> nodo28;
+
+nodo8 -> nodo15;
+nodo16[label="{EO: 16|cost: 4.0|A: IrNorte|EstadoAgenteCustodia:
+	UbicacionActual=(Patricio\nCullen\nAngel\nCassanello)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo29[label="{EO: 29|cost: 5.0|A: Multar|EstadoAgenteCustodia:
+	UbicacionActual=(Patricio\nCullen\nJ.P.López)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+
+nodo16 -> nodo29;
+nodo30[label="{EO: 30|cost: 5.0|A: IrEste|EstadoAgenteCustodia:
+	UbicacionActual=(Patricio\nCullen\nJ.P.López)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+
+nodo16 -> nodo30;
+nodo31[label="{EO: 31|cost: 5.0|A: IrNorte|EstadoAgenteCustodia:
+	UbicacionActual=(Patricio\nCullen\nJ.P.López)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+
+nodo16 -> nodo31;
+
+nodo8 -> nodo16;
+
+nodo4 -> nodo8;
+nodo9[label="{EO: 9|cost: 3.0|A: IrSur|EstadoAgenteCustodia:
+	UbicacionActual=(Echagüe\nAngel\nCassanello)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo17[label="{EO: 17|cost: 4.0|A: IrEste|EstadoAgenteCustodia:
+	UbicacionActual=(Echagüe\nRicardo\nAldao)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo32[label="{EO: 32|cost: 5.0|A: IrSur|EstadoAgenteCustodia:
+	UbicacionActual=(Almirante\nBrown\nRicardo\nAldao)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+
+nodo17 -> nodo32;
+
+nodo9 -> nodo17;
+nodo18[label="{EO: 18|cost: 4.0|A: IrSur|EstadoAgenteCustodia:
+	UbicacionActual=(Echagüe\nRicardo\nAldao)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo33[label="{EO: 33|cost: 5.0|A: IrOeste|EstadoAgenteCustodia:
+	UbicacionActual=(Echagüe\nPedro\nde\nVega)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+
+nodo18 -> nodo33;
+
+nodo9 -> nodo18;
+
+nodo4 -> nodo9;
+
+nodo1 -> nodo4;
+nodo5[label="{EO: 5|cost: 2.0|A: IrNorte|EstadoAgenteCustodia:
+	UbicacionActual=(Talcahuano\nAngel\nCassanello)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo10[label="{EO: 10|cost: 3.0|A: IrEste|EstadoAgenteCustodia:
+	UbicacionActual=(Talcahuano\nJ.P.López)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo19[label="{EO: 19|cost: 4.0|A: IrEste|EstadoAgenteCustodia:
+	UbicacionActual=(Defensa\nJ.P.López)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo34[label="{EO: 34|cost: 5.0|A: IrNorte|EstadoAgenteCustodia:
+	UbicacionActual=(Almirante\nBrown\nJ.P.López)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+
+nodo19 -> nodo34;
+
+nodo10 -> nodo19;
+
+nodo5 -> nodo10;
+nodo11[label="{EO: 11|cost: 3.0|A: IrNorte|EstadoAgenteCustodia:
+	UbicacionActual=(Talcahuano\nJ.P.López)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo20[label="{EO: 20|cost: 4.0|A: IrOeste|EstadoAgenteCustodia:
+	UbicacionActual=(Talcahuano\nHernandarias)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo35[label="{EO: 35|cost: 5.0|A: IrOeste|EstadoAgenteCustodia:
+	UbicacionActual=(Echagüe\nHernandarias)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+
+nodo20 -> nodo35;
+nodo36[label="{EO: 36|cost: 5.0|A: IrSur|EstadoAgenteCustodia:
+	UbicacionActual=(Echagüe\nHernandarias)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+
+nodo20 -> nodo36;
+
+nodo11 -> nodo20;
+nodo21[label="{EO: 21|cost: 4.0|A: IrNorte|EstadoAgenteCustodia:
+	UbicacionActual=(Talcahuano\nHernandarias)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo37[label="{EO: 37|cost: 5.0|A: IrEste|EstadoAgenteCustodia:
+	UbicacionActual=(Talcahuano\nJuan\nCastelli)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+
+nodo21 -> nodo37;
+nodo38[label="{EO: 38|cost: 5.0|A: IrNorte|EstadoAgenteCustodia:
+	UbicacionActual=(Talcahuano\nJuan\nCastelli)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+
+nodo21 -> nodo38;
+
+nodo11 -> nodo21;
+
+nodo5 -> nodo11;
+
+nodo1 -> nodo5;
+
+nodo0 -> nodo1;
+nodo2[label="{EO: 2|cost: 1.0|A: IrNorte}"]
+nodo6[label="{EO: 6|cost: 2.0|A: IrNorte|EstadoAgenteCustodia:
+	UbicacionActual=(Almirante\nBrown\nJ.P.López)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo12[label="{EO: 12|cost: 3.0|A: IrOeste|EstadoAgenteCustodia:
+	UbicacionActual=(Almirante\nBrown\nHernandarias)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo22[label="{EO: 22|cost: 4.0|A: IrOeste|EstadoAgenteCustodia:
+	UbicacionActual=(Defensa\nHernandarias)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo39[label="{EO: 39|cost: 5.0|A: IrOeste|EstadoAgenteCustodia:
+	UbicacionActual=(Talcahuano\nHernandarias)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+
+nodo22 -> nodo39;
+nodo40[label="{EO: 40|cost: 5.0|A: IrNorte|EstadoAgenteCustodia:
+	UbicacionActual=(Talcahuano\nHernandarias)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+
+nodo22 -> nodo40;
+
+nodo12 -> nodo22;
+nodo23[label="{EO: 23|cost: 4.0|A: IrSur|EstadoAgenteCustodia:
+	UbicacionActual=(Defensa\nHernandarias)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+
+nodo12 -> nodo23;
+
+nodo6 -> nodo12;
+nodo13[label="{EO: 13|cost: 3.0|A: IrNorte|EstadoAgenteCustodia:
+	UbicacionActual=(Almirante\nBrown\nHernandarias)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo24[label="{EO: 24|cost: 4.0|A: IrOeste|EstadoAgenteCustodia:
+	UbicacionActual=(Almirante\nBrown\nRiobamba)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo41[label="{EO: 41|cost: 5.0|A: IrEste|EstadoAgenteCustodia:
+	UbicacionActual=(Riobamba\nJuan\nCastelli)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+
+nodo24 -> nodo41;
+nodo42[label="{EO: 42|cost: 5.0|A: IrNorte|EstadoAgenteCustodia:
+	UbicacionActual=(Riobamba\nJuan\nCastelli)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+
+nodo24 -> nodo42;
+
+nodo13 -> nodo24;
+nodo25[label="{EO: 25|cost: 4.0|A: IrNorte|EstadoAgenteCustodia:
+	UbicacionActual=(Almirante\nBrown\nRiobamba)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo43[label="{EO: 43|cost: 5.0|A: IrNorte|EstadoAgenteCustodia:
+	UbicacionActual=(Almirante\nBrown\nJuan\nCastelli)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+
+nodo25 -> nodo43;
+
+nodo13 -> nodo25;
+
+nodo6 -> nodo13;
+
+nodo2 -> nodo6;
+
+nodo0 -> nodo2;
+nodo3[label="{EO: 3|cost: 1.0|A: IrSur}"]
+nodo7[label="{EO: 7|cost: 2.0|A: IrSur|EstadoAgenteCustodia:
+	UbicacionActual=(Almirante\nBrown\nRicardo\nAldao)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo14[label="{EO: 14|cost: 3.0|A: IrOeste|EstadoAgenteCustodia:
+	UbicacionActual=(Almirante\nBrown\nPedro\nde\nVega)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo26[label="{EO: 26|cost: 4.0|A: IrOeste|EstadoAgenteCustodia:
+	UbicacionActual=(Echagüe\nPedro\nde\nVega)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+nodo44[label="{EO: 44|cost: 5.0|A: IrOeste|EstadoAgenteCustodia:
+	UbicacionActual=(Patricio\nCullen\nPedro\nde\nVega)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+
+nodo26 -> nodo44;
+nodo45[label="{EO: 45|cost: 5.0|A: IrNorte|EstadoAgenteCustodia:
+	UbicacionActual=(Patricio\nCullen\nPedro\nde\nVega)
+	ListaInfectados=(Patricio\nCullen\nJ.P.López)
+	ListaCallesCortadas=
+	CantidadMultados=2}"]
+
+nodo26 -> nodo45;
+
+nodo14 -> nodo26;
+
+nodo7 -> nodo14;
+
+nodo3 -> nodo7;
+
+nodo0 -> nodo3;
+
+
+}
