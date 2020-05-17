@@ -9,7 +9,7 @@ import frsf.cidisi.faia.environment.Environment;
 import interfaz.MainAgenteCustodia;
 
 public class Ambiente extends Environment {
-
+	int cont = 0;
 	public Ambiente() {
         // Create the environment state
         this.environmentState = new EstadoAmbiente();
@@ -67,7 +67,7 @@ public class Ambiente extends Environment {
     	
     	int i = (int) (Math.random() * 20);
     	int i2 = (int) (Math.random() * 20);
-    	
+ /*   	
     	if(i2<5){
     		listaInfectados.add(listaAux.get(i));
     		//if(i>5) callesCortadas.add(listaAux.get(i+1));
@@ -76,6 +76,24 @@ public class Ambiente extends Environment {
     	if(!callesCortadas.isEmpty())callesCortadas.remove(callesCortadas.get(0));
     	}
     
+ */   	
+    	cont++;
+    	if(cont==2) {
+    		listaInfectados.add(new VectorCalles("Patricio Cullen","J.P.López"));
+    		//listaInfectados.add(new VectorCalles("Almirante Brown","J.P.López"));
+    	}
+    	else {
+    		if(cont==6) {
+    			//listaInfectados.add(new VectorCalles("Vélez Sarsfield","Hernandarias"));
+    		}
+    		else {
+    			if(cont==7) {
+    				listaInfectados.add(new VectorCalles("Talcahuano","Juan Castelli"));
+    			}
+    		}
+    	}
+    	
+    	
     	
     	perception.setInfectados((ArrayList<VectorCalles>) listaInfectados);
 		perception.setCallesCortadas((ArrayList<VectorCalles>)callesCortadas);

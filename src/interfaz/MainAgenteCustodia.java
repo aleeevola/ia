@@ -33,11 +33,21 @@ import search.VectorCalles;
 import javax.swing.*;
 import javax.swing.border.Border;
 
+<<<<<<< HEAD
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.ArrayList;
+=======
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import java.util.ArrayList;
+
+import java.text.DecimalFormat;
+
+>>>>>>> 821da9eea5288c10cd387eba3cfa49c2f96efde4
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -54,9 +64,12 @@ public class MainAgenteCustodia extends MapView {
 	private static TablaActions tablaAcciones = new TablaActions();
 	private static JTable tablaA;
 	private static ArrayList<String> acciones=new ArrayList();
+<<<<<<< HEAD
 	private static TablaPercepciones tablaPercepciones = new TablaPercepciones();
 	private static JTable tablaP;
 	private static ArrayList<AuxPercepcion> percepciones=new ArrayList();
+=======
+>>>>>>> 821da9eea5288c10cd387eba3cfa49c2f96efde4
 	private static JLabel multados = new JLabel();
 	private static int numeroMultados = 0;
 	
@@ -121,7 +134,11 @@ public class MainAgenteCustodia extends MapView {
         
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         //frame.add(sample, BorderLayout.WEST);
+<<<<<<< HEAD
         frame.setSize(1000, 600);
+=======
+        frame.setSize(800, 500);
+>>>>>>> 821da9eea5288c10cd387eba3cfa49c2f96efde4
         frame.setLocationRelativeTo(null);
 		frame.add(mapa, BorderLayout.CENTER);
 		
@@ -138,14 +155,19 @@ public class MainAgenteCustodia extends MapView {
 		multados = new JLabel();
 		multados.setText("0");
 		panelEstado.add(multados, BorderLayout.NORTH);
+<<<<<<< HEAD
 		panelEstado.setPreferredSize(new Dimension(300,800));
 		//panelEstado.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+=======
+		panelEstado.setPreferredSize(new Dimension(200,800));
+>>>>>>> 821da9eea5288c10cd387eba3cfa49c2f96efde4
 		
     	
 		tablaA = new JTable(tablaAcciones);
 		tablaA.setFillsViewportHeight(true);
 		tablaA.setRowSelectionAllowed(true);
 		tablaA.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+<<<<<<< HEAD
 		tablaA.setPreferredScrollableViewportSize(new Dimension (290,150));
 		JScrollPane scrollPaneT = new JScrollPane(tablaA);
 		panelEstado.add(scrollPaneT, BorderLayout.CENTER);
@@ -157,6 +179,14 @@ public class MainAgenteCustodia extends MapView {
 		tablaP.setPreferredScrollableViewportSize(new Dimension (290,150));
 		JScrollPane scrollPaneP = new JScrollPane(tablaP);
 		panelEstado.add(scrollPaneP, BorderLayout.SOUTH);
+=======
+		tablaA.setPreferredScrollableViewportSize(new Dimension (200,500));
+		JScrollPane scrollPaneT = new JScrollPane(tablaA);
+		
+		panelEstado.add(scrollPaneT, BorderLayout.CENTER);
+		
+		
+>>>>>>> 821da9eea5288c10cd387eba3cfa49c2f96efde4
 		
 		frame.add(panelEstado, BorderLayout.EAST);
     }
@@ -235,6 +265,7 @@ public class MainAgenteCustodia extends MapView {
     
     public static void agregarCalleCortada(VectorCalles esquina) {
    	   
+<<<<<<< HEAD
     	Marker marker = new Marker(map);
           marker.setPosition(coordenadas.get(esquina));
           marker.setIcon("http://maps.google.com/mapfiles/ms/micons/caution.png");
@@ -243,6 +274,22 @@ public class MainAgenteCustodia extends MapView {
           
           AuxPercepcion percep= new AuxPercepcion(esquina,numero_iteracion,"Calle Cortada");
           actualizarPercepciones(percep);
+=======
+   	   Marker marker = new Marker(map);
+          // Setting position of the marker to the result location
+          marker.setPosition(coordenadas.get(esquina));
+          // Creating an information window
+          marker.setIcon("http://maps.google.com/mapfiles/ms/micons/caution.png");
+          InfoWindow infoWindow = new InfoWindow(map);
+          marker.setVisible(true);
+          // Putting the address and location to the content of the information window
+          //infoWindow.setContent("Fue multado! "+esquina.toString());
+          // Moving the information window to the result location
+         
+          // Showing of the information window
+          
+          //infoWindow.open(map, marker);
+>>>>>>> 821da9eea5288c10cd387eba3cfa49c2f96efde4
       }
     
     public void getLocation(VectorCalles esquina) {
@@ -274,12 +321,15 @@ public class MainAgenteCustodia extends MapView {
 		tablaAcciones.setTitulares(acciones);
 		tablaAcciones.fireTableDataChanged();
 	}
+<<<<<<< HEAD
 	
 	public static void actualizarPercepciones(AuxPercepcion percep) {
 		percepciones.add(percep);
 		tablaPercepciones.setPercepciones(percepciones);
 		tablaPercepciones.fireTableDataChanged();
 	}
+=======
+>>>>>>> 821da9eea5288c10cd387eba3cfa49c2f96efde4
     
     private static void cargarMapa() {
     	coordenadas.put(new VectorCalles("Defensa","J.P.López"), new LatLng(-31.61353,-60.670341));
@@ -445,4 +495,26 @@ public class MainAgenteCustodia extends MapView {
     	coordenadas.put(new VectorCalles("General Paz","Regimiento 12 de Infantería"), new LatLng(-31.602206,-60.674643));
     	coordenadas.put(new VectorCalles("Echagüe","J.P.López"), new LatLng(-31.613127,-60.672451));
 }
+    
+    public static Double distancia(VectorCalles v1, VectorCalles v2) {
+		
+    		System.out.println("Vector A "+ v1.toString() + "     Vector B: "+ v2.toString());
+    	
+    	        double lat1 = coordenadas.get(v1).getLat();
+    	        double lat2 = coordenadas.get(v2).getLat();
+    	        double lon1 = coordenadas.get(v1).getLng();
+    	        double lon2 = coordenadas.get(v2).getLng();
+
+    	        double dist = (Math.sqrt(((lat1-lat2)*(lat1-lat2))+((lon1-lon2)*(lon1-lon2))))*1000;
+    	        System.out.println("Valor distancia: "+ dist);
+
+    	        return Math.floor(dist * 100) / 100;
+
+    			
+    	       	
+    	
+ 
+    	
+    }
+
     }

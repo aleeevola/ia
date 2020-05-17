@@ -2,6 +2,7 @@ package search;
 
 import frsf.cidisi.faia.solver.search.IEstimatedCostFunction;
 import frsf.cidisi.faia.solver.search.NTree;
+import interfaz.MainAgenteCustodia;
 
 /**
  * This class allows to define a function to be used by any
@@ -15,7 +16,18 @@ public class Heuristic implements IEstimatedCostFunction {
     @Override
     public double getEstimatedCost(NTree node) {
         EstadoAgenteCustodia agState = (EstadoAgenteCustodia) node.getAgentState();
-		return 0;
+        Double minDistance = 10.00;
+		
+        for(VectorCalles vc: agState.getListaInfectados()) {
+			double d = MainAgenteCustodia.distancia(vc, agState.getUbicacionActual());
+			if(d < minDistance) {
+				minDistance=d;
+			}
+		}
+        System.out.println("minDistance: " + minDistance);
+         return minDistance;
+        
+		//return agState.getHeuristic();
 
        // return (agState.getUnknownCellsCount() +
        //         agState.getRemainingFoodCount());
