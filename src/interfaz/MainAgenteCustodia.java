@@ -130,7 +130,7 @@ public class MainAgenteCustodia extends MapView {
     
     private static void cargarPanelEstado() {
     	JLabel NumMul = new JLabel();
-    	NumMul.setText("Numero de mulados:");
+    	NumMul.setText("Numero de multados:");
 		panelEstado.add(NumMul, BorderLayout.NORTH);
 		multados = new JLabel();
 		multados.setText("0");
@@ -450,7 +450,7 @@ public class MainAgenteCustodia extends MapView {
     
     public static Double distancia(VectorCalles v1, VectorCalles v2) {
 		
-    		System.out.println("Vector A "+ v1.toString() + "     Vector B: "+ v2.toString());
+    		//System.out.println("Vector A "+ v1.toString() + "     Vector B: "+ v2.toString());
     	
     	        double lat1 = coordenadas.get(v1).getLat();
     	        double lat2 = coordenadas.get(v2).getLat();
@@ -458,7 +458,7 @@ public class MainAgenteCustodia extends MapView {
     	        double lon2 = coordenadas.get(v2).getLng();
 
     	        double dist = (Math.sqrt(((lat1-lat2)*(lat1-lat2))+((lon1-lon2)*(lon1-lon2))))*1000;
-    	        System.out.println("Valor distancia: "+ dist);
+    	        //System.out.println("Valor distancia: "+ dist);
 
     	        return Math.floor(dist * 100) / 100;
 

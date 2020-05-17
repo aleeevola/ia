@@ -10,7 +10,12 @@ public class CostFunction implements IStepCostFunction {
      */
     @Override
     public double calculateCost(NTree node) {
-		return node.getAction().getCost();
+		
+		if(node.getAction().toString().equals("Multar")) 
+			return 0;
+		else 
+			return node.getAction().getCost();
+			//return node.getCost();
         //return ((EstadoAgenteCustodia) node.getAgentState()).getVisitedCellsCount();
     }
 }
