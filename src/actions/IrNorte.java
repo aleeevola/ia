@@ -26,7 +26,7 @@ public class IrNorte extends SearchAction{
 
 	@Override
 	public Double getCost() {
-		return new Double(2);
+		return new Double(10);
 	}
 
 	@Override

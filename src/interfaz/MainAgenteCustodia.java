@@ -450,69 +450,18 @@ public class MainAgenteCustodia extends MapView {
     
     public static Double distancia(VectorCalles v1, VectorCalles v2) {
 		
-    	System.out.println("Vector A "+ v1.toString() + "     Vector B: "+ v2.toString());
-    //	 LatLng locationA = coordenadas.get(v1);
-    //	 LatLng locationb = coordenadas.get(v2);
-    	 
-    /*	 	Location locationa = new Location("punto A");
-    	    locationA.setLatitude(latA);
-    	    locationA.setLongitude(lngA);
-
-    	    Location locationB = new Location("punto B");
-
-    	    locationB.setLatitude(latB);
-    	    locationB.setLongitude(lngB);
-
-    	    float distance = locationA.distanceTo(locationB);
-    */
-    	    
-    	    
-    	    
-    	    
-  
-    	        int Radius = 6371;// radio de la tierra en  kilómetros
+    		System.out.println("Vector A "+ v1.toString() + "     Vector B: "+ v2.toString());
+    	
     	        double lat1 = coordenadas.get(v1).getLat();
-    	        double lat2 = coordenadas.get(v2).getLng();
-    	        double lon1 = coordenadas.get(v1).getLat();
+    	        double lat2 = coordenadas.get(v2).getLat();
+    	        double lon1 = coordenadas.get(v1).getLng();
     	        double lon2 = coordenadas.get(v2).getLng();
-    	  /*      double dLat = Math.toRadians(lat2 - lat1);
-    	        double dLon = Math.toRadians(lon2 - lon1);
-    	        double a = Math.sin(dLat / 2) * Math.sin(dLat / 2)
-    	                + Math.cos(Math.toRadians(lat1))
-    	                * Math.cos(Math.toRadians(lat2)) * Math.sin(dLon / 2)
-    	                * Math.sin(dLon / 2);
-    	        double c = 2 * Math.asin(Math.sqrt(a));
-    	       double valueResult = Radius * c;
-    	        double km = valueResult / 1;
-    	        DecimalFormat newFormat = new DecimalFormat("####");
-    	        int kmInDec = Integer.valueOf(newFormat.format(km));
-    	        double meter = valueResult % 1000;
-    	        int meterInDec = Integer.valueOf(newFormat.format(meter));
-    	      //  Log.i("Radius Value", "" + valueResult + "   KM  " + kmInDec
-    	       //         + " Meter   " + meterInDec);
 
-    	        
-    	        System.out.println("Valor distancia: "+ (Radius * c)/1000);
-    	        return (Radius * c)/1000;
-    	    
-    	    
-    	    
-    	        if ((lat1 == lat2) && (lon1 == lon2)) {
-    				return (double) 0;
-    			}
-    			else {
-    				double theta = lon1 - lon2;
-    				double dist = Math.sin(Math.toRadians(lat1)) * Math.sin(Math.toRadians(lat2)) + Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2)) * Math.cos(Math.toRadians(theta));
-    				dist = Math.acos(dist);
-    				dist = Math.toDegrees(dist);
-    				dist = dist * 60 * 1.1515;
-    				System.out.println("Valor distancia: "+ dist);
-    				return dist;
-    	    */
-    	        
-    	        double dist = Math.sqrt(((lat1-lat2)*(lat1-lat2))+((lon1-lon2)*(lon1-lon2)));
+    	        double dist = (Math.sqrt(((lat1-lat2)*(lat1-lat2))+((lon1-lon2)*(lon1-lon2))))*1000;
     	        System.out.println("Valor distancia: "+ dist);
-				return dist;
+
+    	        return Math.floor(dist * 100) / 100;
+
     			
     	       	
     	

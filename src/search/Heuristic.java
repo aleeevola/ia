@@ -16,14 +16,15 @@ public class Heuristic implements IEstimatedCostFunction {
     @Override
     public double getEstimatedCost(NTree node) {
         EstadoAgenteCustodia agState = (EstadoAgenteCustodia) node.getAgentState();
-        Double minDistance = 45.00;
-		System.out.println("minDistance: " + minDistance);
+        Double minDistance = 10.00;
+		
         for(VectorCalles vc: agState.getListaInfectados()) {
 			double d = MainAgenteCustodia.distancia(vc, agState.getUbicacionActual());
 			if(d < minDistance) {
 				minDistance=d;
 			}
 		}
+        System.out.println("minDistance: " + minDistance);
          return minDistance;
         
 		//return agState.getHeuristic();

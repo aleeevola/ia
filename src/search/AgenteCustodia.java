@@ -63,20 +63,20 @@ public class AgenteCustodia extends SearchBasedAgent{
          * DepthFirstSearch strategy = new DepthFirstSearch();
          
          //Breath First Search:
-         BreathFirstSearch strategy = new BreathFirstSearch();
+         */BreathFirstSearch strategy = new BreathFirstSearch();
          /* 
          * Uniform Cost:
          * IStepCostFunction costFunction = new CostFunction();
          * UniformCostSearch strategy = new UniformCostSearch(costFunction);
          /* 
          * A Star Search:
-         */ IStepCostFunction cost = new CostFunction();
+         * IStepCostFunction cost = new CostFunction();
           IEstimatedCostFunction heuristic = new Heuristic();
           AStarSearch strategy = new AStarSearch(cost, heuristic);
           
          /* Greedy Search:
          * IEstimatedCostFunction heuristic = new Heuristic();
-         * GreedySearch strategy = new GreedySearch(heuristic);
+          GreedySearch strategy = new GreedySearch(heuristic);
          */
 
         // Create a Search object with the strategy
@@ -85,7 +85,7 @@ public class AgenteCustodia extends SearchBasedAgent{
         /* Generate an XML file with the search tree. It can also be generated
          * in other formats like PDF with PDF_TREE */
         
-        //searchSolver.setVisibleTree(Search.EFAIA_TREE); comenté esto para q no haga 1000 arboles cada vez que lo corro.
+        searchSolver.setVisibleTree(Search.GRAPHVIZ_TREE); //comenté esto para q no haga 1000 arboles cada vez que lo corro.
 
         // Set the Search searchSolver.
         this.setSolver(searchSolver);

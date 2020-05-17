@@ -130,8 +130,9 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 		// TODO Auto-generated method stub
 		VectorCalles v1 = new VectorCalles("Almirante Brown","Pedro de Vega");
 		
-		listaInfectados.add(new VectorCalles("Patricio Cullen","J.P.López"));
-		listaCallesCortadas.add(new VectorCalles("Piedras","Hernandarias"));
+		listaInfectados.add(new VectorCalles("Vélez Sarsfield","Hernandarias"));
+		//listaInfectados.add(new VectorCalles("Patricio Cullen","J.P.López"));
+		//listaCallesCortadas.add(new VectorCalles("Piedras","Hernandarias"));
 		
 		ubicacionActual = v1; 
 		cantidadMultados = 0;

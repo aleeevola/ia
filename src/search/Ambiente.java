@@ -76,16 +76,17 @@ public class Ambiente extends Environment {
     
  */   	
     	cont++;
-    	if(cont==4) {
-    		listaInfectados.add(new VectorCalles("Almirante Brown","J.P.López"));
+    	if(cont==2) {
+    		listaInfectados.add(new VectorCalles("Patricio Cullen","J.P.López"));
+    		//listaInfectados.add(new VectorCalles("Almirante Brown","J.P.López"));
     	}
     	else {
-    		if(cont==7) {
-    			listaInfectados.add(new VectorCalles("Vélez Sarsfield","Hernandarias"));
+    		if(cont==6) {
+    			//listaInfectados.add(new VectorCalles("Vélez Sarsfield","Hernandarias"));
     		}
     		else {
-    			if(cont==9) {
-    				listaInfectados.add(new VectorCalles("Defensa","Juan Castelli"));
+    			if(cont==7) {
+    				listaInfectados.add(new VectorCalles("Talcahuano","Juan Castelli"));
     			}
     		}
     	}
