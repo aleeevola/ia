@@ -41,6 +41,7 @@ public class AgenteCustodia extends SearchBasedAgent{
         operators.addElement(new IrNorte());
         operators.addElement(new IrSur());
         
+        
 
         // Create the Problem which the agent will resolve
         Problem problem = new Problem(agGoal, agState, operators);
@@ -67,7 +68,7 @@ public class AgenteCustodia extends SearchBasedAgent{
          /* 
          * Uniform Cost:
          * IStepCostFunction costFunction = new CostFunction();
-         * UniformCostSearch strategy = new UniformCostSearch(costFunction);
+          UniformCostSearch strategy = new UniformCostSearch(costFunction);
          /* 
          * A Star Search:
          * IStepCostFunction cost = new CostFunction();
