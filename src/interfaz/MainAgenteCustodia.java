@@ -35,10 +35,12 @@ import javax.swing.border.Border;
 
 
 import java.awt.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
+
 import java.util.ArrayList;
+
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -465,12 +467,19 @@ public class MainAgenteCustodia extends MapView {
     	coordenadas.put(new VectorCalles("General Paz","Padre Genesio"), new LatLng(-31.604046,-60.675168));
     	coordenadas.put(new VectorCalles("General Paz","Regimiento 12 de Infantería"), new LatLng(-31.602206,-60.674643));
     	coordenadas.put(new VectorCalles("Echagüe","J.P.López"), new LatLng(-31.613127,-60.672451));
-}
+
+    }
     
     public static Double distancia(VectorCalles v1, VectorCalles v2) {
-		
-    		System.out.println("Vector A "+ v1.toString() + "     Vector B: "+ v2.toString());
+System.out.println("Vector A "+ v1.toString() + "     Vector B: "+ v2.toString());
     	
+    	    
+    	    
+    	    
+    	    
+  
+    	        int Radius = 6371;// radio de la tierra en  kilÃ³metros
+
     	        double lat1 = coordenadas.get(v1).getLat();
     	        double lat2 = coordenadas.get(v2).getLat();
     	        double lon1 = coordenadas.get(v1).getLng();
