@@ -86,7 +86,7 @@ public class Ambiente extends Environment {
     	case 2:
     		break;
     	case 9:
-    		listaInfectados.add(new VectorCalles("TacuarÃ­","Espora"));
+    		listaInfectados.add(new VectorCalles("Tacuarí","Espora"));
     		callesCortadas.add(new VectorCalles("Defensa","Estanislao Zeballos"));
     		break;
     	case 11:
@@ -96,7 +96,7 @@ public class Ambiente extends Environment {
     		listaInfectados.add(new VectorCalles("Defensa","Juan Castelli"));
     		break;
     	case 18:
-    		listaInfectados.add(new VectorCalles("EchagÃ¼e","Estanislao Zeballos"));
+    		listaInfectados.add(new VectorCalles("Echagüe","Estanislao Zeballos"));
     		break;
     	case 20:
 			callesCortadas.add(new VectorCalles("Almirante Brown","Juan Castelli"));
