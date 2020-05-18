@@ -30,7 +30,7 @@ public class Ambiente extends Environment {
 	public Perception getPercept() {
 		// TODO REVISAR 
 		//incrementa el numero de iteracion para agregarlo en la tabla y saber cuando se da cada percepcion.
-		MainAgenteCustodia.numero_iteracion++;
+
 		PerceptionAgenteCustodia perception = new PerceptionAgenteCustodia();
 		
 		 List<VectorCalles> listaInfectados=new ArrayList<VectorCalles>();
@@ -38,29 +38,29 @@ public class Ambiente extends Environment {
 		 List<VectorCalles> callesCortadas=new ArrayList<VectorCalles>();
     	//listaInfectados.add(new VectorCalles("Almirante Brown","Ricardo Aldao"));
 		 //listaInfectados.add(new VectorCalles("Riobamba","Obispo Boneo"));
-    	//listaInfectados.add(new VectorCalles("Tacuarí","Angel Cassanello"));
-    	//listaInfectados.add(new VectorCalles("Tacuarí","Espora"));
-		 //listaInfectados.add(new VectorCalles("Patricio Cullen","Obispo Príncipe"));
+    	//listaInfectados.add(new VectorCalles("TacuarÃ­","Angel Cassanello"));
+    	//listaInfectados.add(new VectorCalles("TacuarÃ­","Espora"));
+		 //listaInfectados.add(new VectorCalles("Patricio Cullen","Obispo PrÃ­ncipe"));
     	//listaInfectados.add(new VectorCalles("Almirante Brown","Juan Castelli"));
 		 
 		/*listaAux.add(new VectorCalles("Almirante Brown","Ricardo Aldao"));
 		listaAux.add(new VectorCalles("Riobamba","Obispo Boneo"));
 		listaAux.add(new VectorCalles("Talcahuano","Hernandarias"));
-    	listaAux.add(new VectorCalles("Tacuarí","Angel Cassanello"));
-    	listaAux.add(new VectorCalles("Antonia Godoy","J.P.López"));
+    	listaAux.add(new VectorCalles("TacuarÃ­","Angel Cassanello"));
+    	listaAux.add(new VectorCalles("Antonia Godoy","J.P.LÃ³pez"));
     	listaAux.add(new VectorCalles("Antonia Godoy","Hernandarias"));
-    	listaAux.add(new VectorCalles("Echagüe","Ricardo Aldao"));
-    	listaAux.add(new VectorCalles("Echagüe","Hernandarias"));
-    	listaAux.add(new VectorCalles("Echagüe","Estanislao Zeballos"));
+    	listaAux.add(new VectorCalles("EchagÃ¼e","Ricardo Aldao"));
+    	listaAux.add(new VectorCalles("EchagÃ¼e","Hernandarias"));
+    	listaAux.add(new VectorCalles("EchagÃ¼e","Estanislao Zeballos"));
     	listaAux.add(new VectorCalles("Patricio Cullen","Juan Castelli"));
-    	listaAux.add(new VectorCalles("Patricio Cullen","Obispo Príncipe"));
-    	listaAux.add(new VectorCalles("Vélez Sarsfield","J.P.López"));
-    	listaAux.add(new VectorCalles("Tacuarí","Juan Castelli"));
+    	listaAux.add(new VectorCalles("Patricio Cullen","Obispo PrÃ­ncipe"));
+    	listaAux.add(new VectorCalles("VÃ©lez Sarsfield","J.P.LÃ³pez"));
+    	listaAux.add(new VectorCalles("TacuarÃ­","Juan Castelli"));
     	listaAux.add(new VectorCalles("Almirante Brown","Juan Castelli"));
-    	listaAux.add(new VectorCalles("Tacuarí","Espora"));
+    	listaAux.add(new VectorCalles("TacuarÃ­","Espora"));
     	listaAux.add(new VectorCalles("General Paz","Cardenal Fasolino"));
     	listaAux.add(new VectorCalles("Defensa","Alberti"));
-    	listaAux.add(new VectorCalles("Echagüe","Padre Genesio"));
+    	listaAux.add(new VectorCalles("EchagÃ¼e","Padre Genesio"));
     	listaAux.add(new VectorCalles("Piedras","Javier de la Rosa"));
     	listaAux.add(new VectorCalles("General Paz","Pedro de Vega"));
     	
@@ -72,21 +72,21 @@ public class Ambiente extends Environment {
     		listaInfectados.add(listaAux.get(i));
     		//if(i>5) callesCortadas.add(listaAux.get(i+1));
     	} else {
-    	//i2<5 es una condición arbitraria para que en algunas iteraciones se agreguen ciudadados-infectados y en otras no.
+    	//i2<5 es una condiciÃ³n arbitraria para que en algunas iteraciones se agreguen ciudadados-infectados y en otras no.
     	if(!callesCortadas.isEmpty())callesCortadas.remove(callesCortadas.get(0));
     	}
     
  */   	
     	if(cont==0) {
-    		//listaInfectados.add(new VectorCalles("Patricio Cullen","J.P.López"));
-    		//listaInfectados.add(new VectorCalles("Almirante Brown","J.P.López"));
+    		//listaInfectados.add(new VectorCalles("Patricio Cullen","J.P.LÃ³pez"));
+    		//listaInfectados.add(new VectorCalles("Almirante Brown","J.P.LÃ³pez"));
     		}
     	cont++;
     	switch (cont) {
     	case 2:
     		break;
     	case 9:
-    		listaInfectados.add(new VectorCalles("Tacuarí","Espora"));
+    		listaInfectados.add(new VectorCalles("TacuarÃ­","Espora"));
     		callesCortadas.add(new VectorCalles("Defensa","Estanislao Zeballos"));
     		break;
     	case 11:
@@ -96,33 +96,33 @@ public class Ambiente extends Environment {
     		listaInfectados.add(new VectorCalles("Defensa","Juan Castelli"));
     		break;
     	case 18:
-    		listaInfectados.add(new VectorCalles("Echagüe","Estanislao Zeballos"));
+    		listaInfectados.add(new VectorCalles("EchagÃ¼e","Estanislao Zeballos"));
     		break;
     	case 20:
 			callesCortadas.add(new VectorCalles("Almirante Brown","Juan Castelli"));
     		break;
     	}
     	/*if(cont==2) {
-    		//listaInfectados.add(new VectorCalles("Tacuarí","Angel Cassanello"));
+    		//listaInfectados.add(new VectorCalles("TacuarÃ­","Angel Cassanello"));
     
-    		//listaInfectados.add(new VectorCalles("Patricio Cullen","J.P.López"));
-    		//listaInfectados.add(new VectorCalles("Almirante Brown","J.P.López"));
+    		//listaInfectados.add(new VectorCalles("Patricio Cullen","J.P.LÃ³pez"));
+    		//listaInfectados.add(new VectorCalles("Almirante Brown","J.P.LÃ³pez"));
     	}
     	else {
     		if(cont==16) {
     			
     			listaInfectados.add(new VectorCalles("Almirante Brown","Juan Castelli"));
-    			//listaInfectados.add(new VectorCalles("Vélez Sarsfield","Hernandarias"));
+    			//listaInfectados.add(new VectorCalles("VÃ©lez Sarsfield","Hernandarias"));
     		}
     		else {
     			if(cont==10) {
-   				  listaInfectados.add(new VectorCalles("Tacuarí","Espora"));
+   				  listaInfectados.add(new VectorCalles("TacuarÃ­","Espora"));
    				  callesCortadas.add(new VectorCalles("Defensa","Estanislao Zeballos"));
     				//listaInfectados.add(new VectorCalles("Talcahuano","Juan Castelli"));
     			}
     			else {
     				if(cont==20) {
-    					listaInfectados.add(new VectorCalles("Echagüe","Estanislao Zeballos"));
+    					listaInfectados.add(new VectorCalles("EchagÃ¼e","Estanislao Zeballos"));
     					callesCortadas.add(new VectorCalles("Defensa","Juan Castelli"));
     				}
     				else {
@@ -146,13 +146,13 @@ public class Ambiente extends Environment {
 	    }
 	 
 	
-	//Este método indica bajo qué condición se considera que el agente ha fallado
+	//Este mÃ©todo indica bajo quÃ© condiciÃ³n se considera que el agente ha fallado
     public boolean agentFailed(Action actionReturned) {
     	boolean failed = false;
 
     	//Notar que en este punto tenemos 3 posibilidades inmediatas:
-    	//1 - Agregar al estado del ambiente el atributo que nos indica falla (energía)
-    	//2 - Agregar un operador que se denomine "apagar" (que vendrá en "actionReturned")
+    	//1 - Agregar al estado del ambiente el atributo que nos indica falla (energÃ­a)
+    	//2 - Agregar un operador que se denomine "apagar" (que vendrÃ¡ en "actionReturned")
     	//3 - Modificar GoalBasedAgentSimulator para que pase el AgentState en lugar de Action
 
         return failed;
