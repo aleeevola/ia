@@ -26,7 +26,7 @@ public class IrOeste extends SearchAction{
 
 	@Override
 	public Double getCost() {
-		return new Double(1);
+		return new Double(10);
 	}
 
 	@Override

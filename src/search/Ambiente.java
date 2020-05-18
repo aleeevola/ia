@@ -34,7 +34,7 @@ public class Ambiente extends Environment {
 		PerceptionAgenteCustodia perception = new PerceptionAgenteCustodia();
 		
 		 List<VectorCalles> listaInfectados=new ArrayList<VectorCalles>();
-		 List<VectorCalles> listaAux=new ArrayList<VectorCalles>();
+		 //List<VectorCalles> listaAux=new ArrayList<VectorCalles>();
 		 List<VectorCalles> callesCortadas=new ArrayList<VectorCalles>();
     	//listaInfectados.add(new VectorCalles("Almirante Brown","Ricardo Aldao"));
 		 //listaInfectados.add(new VectorCalles("Riobamba","Obispo Boneo"));
@@ -43,7 +43,7 @@ public class Ambiente extends Environment {
 		 //listaInfectados.add(new VectorCalles("Patricio Cullen","Obispo Príncipe"));
     	//listaInfectados.add(new VectorCalles("Almirante Brown","Juan Castelli"));
 		 
-		listaAux.add(new VectorCalles("Almirante Brown","Ricardo Aldao"));
+		/*listaAux.add(new VectorCalles("Almirante Brown","Ricardo Aldao"));
 		listaAux.add(new VectorCalles("Riobamba","Obispo Boneo"));
 		listaAux.add(new VectorCalles("Talcahuano","Hernandarias"));
     	listaAux.add(new VectorCalles("Tacuarí","Angel Cassanello"));
@@ -85,19 +85,21 @@ public class Ambiente extends Environment {
     	switch (cont) {
     	case 2:
     		break;
-    	case 10:
+    	case 9:
     		listaInfectados.add(new VectorCalles("Tacuarí","Espora"));
     		callesCortadas.add(new VectorCalles("Defensa","Estanislao Zeballos"));
     		break;
-    	case 13:
+    	case 11:
     		listaInfectados.add(new VectorCalles("Patricio Cullen","Hernandarias"));
     		break;
-    	case 16:
-    		listaInfectados.add(new VectorCalles("Almirante Brown","Juan Castelli"));
+    	case 15:
+    		listaInfectados.add(new VectorCalles("Defensa","Juan Castelli"));
+    		break;
+    	case 18:
+    		listaInfectados.add(new VectorCalles("Echagüe","Estanislao Zeballos"));
     		break;
     	case 20:
-    		listaInfectados.add(new VectorCalles("Echagüe","Estanislao Zeballos"));
-			callesCortadas.add(new VectorCalles("Defensa","Juan Castelli"));
+			callesCortadas.add(new VectorCalles("Almirante Brown","Juan Castelli"));
     		break;
     	}
     	/*if(cont==2) {

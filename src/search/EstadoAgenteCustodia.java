@@ -132,7 +132,7 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 		
 		listaInfectados.add(new VectorCalles("Echagüe","Obispo Boneo"));
 		listaInfectados.add(new VectorCalles("Tacuarí","Angel Cassanello"));
-		listaInfectados.add(new VectorCalles("Piedras","Hernandarias"));
+		//listaInfectados.add(new VectorCalles("Piedras","Hernandarias"));
 		//listaInfectados.add(new VectorCalles("Tacuarí","Angel Cassanello"));
 		//listaInfectados.add(new VectorCalles("Tacuarí","Espora"));
 		//listaInfectados.add(new VectorCalles("Almirante Brown","Juan Castelli"));
