@@ -39,7 +39,7 @@ public class IrOeste extends SearchAction{
         //Las direcciones en las que no pueden moverse el agente desde la esquina en la que está tienen asignado un "0" 
         if(esquinaSiguiente!=null && !agState.getListaCallesCortadas().contains(esquinaSiguiente)){
         	MainAgenteCustodia.trazarDesplazamiento(agState.getUbicacionActual(), esquinaSiguiente);
-        	MainAgenteCustodia.actualizarAccion(this.toString());
+        	MainAgenteCustodia.actualizarAccion(this.toString()+" -> "+esquinaSiguiente.toString());
         	
         	environmentState.setposicionAgenteCustodia(esquinaSiguiente);
         	agState.setUbicacionActual(esquinaSiguiente);

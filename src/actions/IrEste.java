@@ -45,7 +45,7 @@ public class IrEste extends SearchAction{
         if(esquinaSiguiente!=null && !agState.getListaCallesCortadas().contains(esquinaSiguiente)){
       
         	MainAgenteCustodia.trazarDesplazamiento(agState.getUbicacionActual(), esquinaSiguiente);
-        	MainAgenteCustodia.actualizarAccion(this.toString());
+        	MainAgenteCustodia.actualizarAccion(this.toString()+" -> "+esquinaSiguiente.toString());
         	
         	environmentState.setposicionAgenteCustodia(esquinaSiguiente);
         	agState.setUbicacionActual(esquinaSiguiente);

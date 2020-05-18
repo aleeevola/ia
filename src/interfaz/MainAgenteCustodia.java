@@ -164,16 +164,16 @@ public class MainAgenteCustodia extends MapView {
 		tablaA.setRowSelectionAllowed(true);
 		tablaA.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
-		tablaA.setPreferredScrollableViewportSize(new Dimension (290,150));
+		tablaA.setPreferredScrollableViewportSize(new Dimension (290,200));
 		JScrollPane scrollPaneT = new JScrollPane(tablaA);
-		scrollPaneT.setPreferredSize(new Dimension (290,150));
+		scrollPaneT.setPreferredSize(new Dimension (290,200));
 		panelEstado.add(scrollPaneT, BorderLayout.CENTER);
 		
 		tablaP = new JTable(tablaPercepciones);
 		tablaP.setFillsViewportHeight(true);
 		tablaP.setRowSelectionAllowed(true);
 		tablaP.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		tablaP.setPreferredScrollableViewportSize(new Dimension (290,150));
+		tablaP.setPreferredScrollableViewportSize(new Dimension (290,200));
 		JScrollPane scrollPaneP = new JScrollPane(tablaP);
 		panelEstado.add(scrollPaneP, BorderLayout.SOUTH);
 
@@ -236,7 +236,7 @@ public class MainAgenteCustodia extends MapView {
         marker.setPosition(coordenadas.get(esquina));
         marker.setIcon("http://maps.google.com/mapfiles/ms/micons/blue-dot.png");
         InfoWindow infoWindow = new InfoWindow(map);
-        infoWindow.setContent("Fue multado! "+esquina.toString());
+        infoWindow.setContent("Multado! "+esquina.toString());
         
         infoWindow.open(map, marker);
         
