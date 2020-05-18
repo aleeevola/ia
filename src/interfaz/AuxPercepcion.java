@@ -5,12 +5,14 @@ import search.VectorCalles;
 public class AuxPercepcion {
 	private VectorCalles esquina;
 
+
 	private String percepcion;
 	
 	
 	public AuxPercepcion(VectorCalles esquina, String percepcion) {
 		super();
 		this.esquina = esquina;
+
 		this.percepcion = percepcion;
 	}
 	

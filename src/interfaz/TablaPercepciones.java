@@ -9,8 +9,9 @@ import javax.swing.table.AbstractTableModel;
 public class TablaPercepciones extends AbstractTableModel{
 
 	private List<AuxPercepcion> percepciones=new ArrayList();
+
 	private String[] columnas = {"Percepcion","Esquina"};
-	
+
 
 	
 	public List<AuxPercepcion> getPercepciones() {
@@ -43,6 +44,7 @@ public class TablaPercepciones extends AbstractTableModel{
 		
 		switch(columnIndex) {
 		case 0:
+
 			valor = this.percepciones.get(rowIndex).getPercepcion();
 			break;
 		case 1:

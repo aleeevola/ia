@@ -39,7 +39,7 @@ public class Multar extends SearchAction{
 	@Override
 	public Double getCost() {
 		// TODO Auto-generated method stub
-		return new Double(0);
+		return new Double(1);
 	}
 
 	  /**
