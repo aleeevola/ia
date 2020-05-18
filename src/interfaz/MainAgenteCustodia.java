@@ -28,6 +28,7 @@ import frsf.cidisi.faia.exceptions.PrologConnectorException;
 import frsf.cidisi.faia.simulator.SearchBasedAgentSimulator;
 import search.AgenteCustodia;
 import search.Ambiente;
+import search.EstadoAgenteCustodia;
 import search.VectorCalles;
 
 import javax.swing.*;
@@ -74,7 +75,6 @@ public class MainAgenteCustodia extends MapView {
 	private static int numeroMultados = 0;
 	
 	public static Map map;
-	public static int numero_iteracion=0;
 	
 	public static Map getMapaAgente() {
 		return map;
@@ -166,6 +166,7 @@ public class MainAgenteCustodia extends MapView {
 
 		tablaA.setPreferredScrollableViewportSize(new Dimension (290,150));
 		JScrollPane scrollPaneT = new JScrollPane(tablaA);
+		scrollPaneT.setPreferredSize(new Dimension (290,150));
 		panelEstado.add(scrollPaneT, BorderLayout.CENTER);
 		
 		tablaP = new JTable(tablaPercepciones);
@@ -189,7 +190,12 @@ public class MainAgenteCustodia extends MapView {
         SearchBasedAgentSimulator simulator =
                 new SearchBasedAgentSimulator(environment, agent);
         
+        agregarInfectados(((EstadoAgenteCustodia) agent.getAgentState()).getListaInfectados());
+        
         simulator.start();
+        
+        
+        
     }
     
    
@@ -246,11 +252,17 @@ public class MainAgenteCustodia extends MapView {
          InfoWindow infoWindow = new InfoWindow(map);
          marker.setVisible(true);
          
-         AuxPercepcion percep= new AuxPercepcion(esquina,numero_iteracion,"Infectado");
+         AuxPercepcion percep= new AuxPercepcion(esquina,"Infectado");
          actualizarPercepciones(percep);
          
          
      }
+    
+    public static void agregarInfectados(List<VectorCalles> listaInfectados) {
+    	for(VectorCalles in:listaInfectados) {
+    		agregarInfectado(in);
+    	}
+    }
     
     public static void agregarCalleCortada(VectorCalles esquina) {
    	   
@@ -261,7 +273,7 @@ public class MainAgenteCustodia extends MapView {
           InfoWindow infoWindow = new InfoWindow(map);
           marker.setVisible(true);
           
-          AuxPercepcion percep= new AuxPercepcion(esquina,numero_iteracion,"Calle Cortada");
+          AuxPercepcion percep= new AuxPercepcion(esquina,"Calle Cortada");
           actualizarPercepciones(percep);
 
       }

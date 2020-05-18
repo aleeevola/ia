@@ -26,6 +26,7 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 		cantidadMultados = 0;
     	
         this.initState();
+        
     }
 
 
@@ -136,6 +137,8 @@ public class EstadoAgenteCustodia extends SearchBasedAgentState{
 		
 		ubicacionActual = v1; 
 		cantidadMultados = 0;
+		
+		
 	}
 	
 	public VectorCalles getUbicacionActual() {

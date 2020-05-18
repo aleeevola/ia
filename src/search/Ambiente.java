@@ -30,7 +30,7 @@ public class Ambiente extends Environment {
 	public Perception getPercept() {
 		// TODO REVISAR 
 		//incrementa el numero de iteracion para agregarlo en la tabla y saber cuando se da cada percepcion.
-		MainAgenteCustodia.numero_iteracion++;
+
 		PerceptionAgenteCustodia perception = new PerceptionAgenteCustodia();
 		
 		 List<VectorCalles> listaInfectados=new ArrayList<VectorCalles>();
