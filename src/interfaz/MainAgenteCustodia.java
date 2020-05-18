@@ -471,33 +471,14 @@ public class MainAgenteCustodia extends MapView {
     }
     
     public static Double distancia(VectorCalles v1, VectorCalles v2) {
+  	        double lat1 = coordenadas.get(v1).getLat();
+   	        double lat2 = coordenadas.get(v2).getLat();
+   	        double lon1 = coordenadas.get(v1).getLng();
+   	        double lon2 = coordenadas.get(v2).getLng();
 
-		
-    		//System.out.println("Vector A "+ v1.toString() + "     Vector B: "+ v2.toString());
+   	        double dist = (Math.sqrt(((lat1-lat2)*(lat1-lat2))+((lon1-lon2)*(lon1-lon2))))*1000;
 
-    	
-    	    
-    	    
-    	    
-    	    
-  
-    	        int Radius = 6371;// radio de la tierra en  kilÃ³metros
-
-    	        double lat1 = coordenadas.get(v1).getLat();
-    	        double lat2 = coordenadas.get(v2).getLat();
-    	        double lon1 = coordenadas.get(v1).getLng();
-    	        double lon2 = coordenadas.get(v2).getLng();
-
-    	        double dist = (Math.sqrt(((lat1-lat2)*(lat1-lat2))+((lon1-lon2)*(lon1-lon2))))*1000;
-    	        //System.out.println("Valor distancia: "+ dist);
-
-    	        return Math.floor(dist * 100) / 100;
-
-    			
-    	       	
-    	
- 
-    	
+   	        return Math.floor(dist * 100) / 100;
     }
 
     }

@@ -10,7 +10,7 @@ public class ObjetivoAgenteCustodia extends GoalTest{
 	public boolean isGoalState(AgentState agentState) {
 		EstadoAgenteCustodia estado = (EstadoAgenteCustodia) agentState;
 
-		 if(estado.getListaInfectados().isEmpty()) {
+		 if(estado.getListaInfectados().isEmpty()){
 				// ||	 estado.getCantidadMultados()>3){
 		        		return true;      
 		        }

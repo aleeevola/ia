@@ -78,25 +78,61 @@ public class Ambiente extends Environment {
     
  */   	
     	if(cont==0) {
-    		listaInfectados.add(new VectorCalles("Patricio Cullen","J.P.López"));
-    		listaInfectados.add(new VectorCalles("Almirante Brown","J.P.López"));}
+    		//listaInfectados.add(new VectorCalles("Patricio Cullen","J.P.López"));
+    		//listaInfectados.add(new VectorCalles("Almirante Brown","J.P.López"));
+    		}
     	cont++;
-    	if(cont==2) {
+    	switch (cont) {
+    	case 2:
+    		break;
+    	case 10:
+    		listaInfectados.add(new VectorCalles("Tacuarí","Espora"));
+    		callesCortadas.add(new VectorCalles("Defensa","Estanislao Zeballos"));
+    		break;
+    	case 13:
+    		listaInfectados.add(new VectorCalles("Patricio Cullen","Hernandarias"));
+    		break;
+    	case 16:
+    		listaInfectados.add(new VectorCalles("Almirante Brown","Juan Castelli"));
+    		break;
+    	case 20:
+    		listaInfectados.add(new VectorCalles("Echagüe","Estanislao Zeballos"));
+			callesCortadas.add(new VectorCalles("Defensa","Juan Castelli"));
+    		break;
+    	}
+    	/*if(cont==2) {
+    		//listaInfectados.add(new VectorCalles("Tacuarí","Angel Cassanello"));
+    
     		//listaInfectados.add(new VectorCalles("Patricio Cullen","J.P.López"));
     		//listaInfectados.add(new VectorCalles("Almirante Brown","J.P.López"));
     	}
     	else {
-    		if(cont==6) {
+    		if(cont==16) {
+    			
+    			listaInfectados.add(new VectorCalles("Almirante Brown","Juan Castelli"));
     			//listaInfectados.add(new VectorCalles("Vélez Sarsfield","Hernandarias"));
     		}
     		else {
-    			if(cont==7) {
+    			if(cont==10) {
+   				  listaInfectados.add(new VectorCalles("Tacuarí","Espora"));
+   				  callesCortadas.add(new VectorCalles("Defensa","Estanislao Zeballos"));
     				//listaInfectados.add(new VectorCalles("Talcahuano","Juan Castelli"));
+    			}
+    			else {
+    				if(cont==20) {
+    					listaInfectados.add(new VectorCalles("Echagüe","Estanislao Zeballos"));
+    					callesCortadas.add(new VectorCalles("Defensa","Juan Castelli"));
+    				}
+    				else {
+    					if(cont==13) {
+    						listaInfectados.add(new VectorCalles("Patricio Cullen","Hernandarias"));
+    					}
+    				}
     			}
     		}
     	}
     	
-    	
+    	*/
     	
     	perception.setInfectados((ArrayList<VectorCalles>) listaInfectados);
 		perception.setCallesCortadas((ArrayList<VectorCalles>)callesCortadas);
