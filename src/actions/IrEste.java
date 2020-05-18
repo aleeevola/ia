@@ -31,7 +31,7 @@ public class IrEste extends SearchAction{
 
 	@Override
 	public Double getCost() {
-		return new Double(10);
+		return new Double(0);
 	}
 
 	@Override

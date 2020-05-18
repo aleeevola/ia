@@ -77,9 +77,12 @@ public class Ambiente extends Environment {
     	}
     
  */   	
+    	if(cont==0) {
+    		listaInfectados.add(new VectorCalles("Patricio Cullen","J.P.López"));
+    		listaInfectados.add(new VectorCalles("Almirante Brown","J.P.López"));}
     	cont++;
     	if(cont==2) {
-    		listaInfectados.add(new VectorCalles("Patricio Cullen","J.P.López"));
+    		//listaInfectados.add(new VectorCalles("Patricio Cullen","J.P.López"));
     		//listaInfectados.add(new VectorCalles("Almirante Brown","J.P.López"));
     	}
     	else {
@@ -88,7 +91,7 @@ public class Ambiente extends Environment {
     		}
     		else {
     			if(cont==7) {
-    				listaInfectados.add(new VectorCalles("Talcahuano","Juan Castelli"));
+    				//listaInfectados.add(new VectorCalles("Talcahuano","Juan Castelli"));
     			}
     		}
     	}
